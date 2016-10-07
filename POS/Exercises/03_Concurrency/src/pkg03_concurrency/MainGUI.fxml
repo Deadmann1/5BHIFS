@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="181.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg03_concurrency.MainGUIController">
+   <children>
+      <Button fx:id="btnStart" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onButtonClick" text="Start" />
+      <Button fx:id="btnStop" layoutX="185.0" layoutY="14.0" mnemonicParsing="false" onAction="#onButtonClick" text="Stop" />
+      <TextField fx:id="txtMessage" layoutX="15.0" layoutY="46.0" prefHeight="26.0" prefWidth="568.0" promptText="..." style="-fx-background-color: yellow;" />
+      <Button fx:id="btnShow" layoutX="74.0" layoutY="14.0" mnemonicParsing="false" onAction="#onButtonClick" text="Show Result" />
+      <TextField fx:id="txtMessage2" layoutX="14.0" layoutY="80.0" prefHeight="26.0" prefWidth="568.0" promptText="..." style="-fx-background-color: yellow;" />
+      <ImageView fx:id="imgCar" fitHeight="134.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" x="15.0" y="119.0">
+         <image>
+            <Image url="@black-and-white-car-clip-art-free-vector-for-free-download-about.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
