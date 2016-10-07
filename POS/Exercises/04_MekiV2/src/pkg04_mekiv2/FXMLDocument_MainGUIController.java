@@ -10,7 +10,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -19,13 +22,25 @@ import javafx.scene.control.Label;
 public class FXMLDocument_MainGUIController implements Initializable {
     
     @FXML
-    private Label label;
-    
+    private Button btnStart;
+
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private CheckBox chkbxSpeedSimulation;
+
+    @FXML
+    private Label lblMessage;
+
+    @FXML
+    private TextField txtTimeCars;
+
+    @FXML
+    private TextField txtNrCars;
+
+    @FXML
+    void btnStartClicked(ActionEvent event) {
+
     }
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
