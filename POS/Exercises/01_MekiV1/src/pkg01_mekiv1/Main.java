@@ -5,6 +5,8 @@
  */
 package pkg01_mekiv1;
 
+import java.util.Vector;
+import java.util.concurrent.Semaphore;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,6 +19,13 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
     
+    private Vector<Thread> vecCarDriver;
+    private long speedFactor;
+    private Semaphore semaOrderFree;
+    private Semaphore semaCashDispenserFree;
+    private Watch watch;
+    
+    
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument_MainGUI.fxml"));
@@ -25,6 +34,8 @@ public class Main extends Application {
         
         stage.setScene(scene);
         stage.show();
+        
+        
     }
 
     /**
@@ -32,6 +43,12 @@ public class Main extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+    }
+    
+    void run() {
+        
+        
+        
     }
     
 }
