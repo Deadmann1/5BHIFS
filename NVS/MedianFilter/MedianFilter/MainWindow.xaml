@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedianFilter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="Median Filter Sammer Manuel" Height="350" Width="525" MinWidth="525" MinHeight="350">
+    <Grid Margin="0,0,2,2">
+        <DockPanel LastChildFill="False" Margin="0,0,-6,3">
+            <Menu x:Name="menu" Height="20" VerticalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,10,0">
+                <MenuItem Header="File" Width="37" Margin="7,0,0,0">
+                    <MenuItem x:Name="MenuItemLoad" Header="Load" HorizontalAlignment="Left" Width="140" Click="MenuItemLoad_Click"/>
+                    <MenuItem x:Name="MenuItemSave" Header="Save" HorizontalAlignment="Left" Width="140" Click="MenuItemSave_Click"/>
+                    <MenuItem x:Name="MenuItemExit" Header="Exit" HorizontalAlignment="Left" Width="140" Click="MenuItemExit_Click"/>
+                </MenuItem>
+            </Menu>
+            <Grid Height="50" VerticalAlignment="Top" DockPanel.Dock="Top" Margin="0,0,10,0">
+                <ComboBox x:Name="comboBoxFilter" HorizontalAlignment="Left" Margin="10,23,0,3" Width="120"/>
+                <Label x:Name="lblFilter" Content="Filter:" VerticalAlignment="Top" Height="34" Margin="10,0,385,0"/>
+                <Button x:Name="btnFilter" Content="Filter" HorizontalAlignment="Left" Margin="159,23,0,3" Width="75" Click="btnFilter_Click"/>
+            </Grid>
+            <Grid Margin="0,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250*"/>
+                    <ColumnDefinition Width="267*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="imageBefore" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Image x:Name="imageAfter" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </Grid>
+        </DockPanel>
     </Grid>
 </Window>

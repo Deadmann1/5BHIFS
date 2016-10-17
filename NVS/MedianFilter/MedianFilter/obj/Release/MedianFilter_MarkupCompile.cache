@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Manuel Sammer\Source\Repos\5BHIFS\NVS\MedianFilter\MedianFilter\obj\Debug\
+C:\Users\Manuel Sammer\Source\Repos\5BHIFS\NVS\MedianFilter\MedianFilter\obj\Release\
 MedianFilter
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\Manuel Sammer\Source\Repos\5BHIFS\NVS\MedianFilter\MedianFilter\App.xaml
 11151548125
 
-10-1434201007
+6-1185917372
 17-1235150513
 MainWindow.xaml;
 
-True
+False
 
