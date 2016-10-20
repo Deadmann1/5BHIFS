@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="190.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg01_mekiv1.MainGUIController">
+   <children>
+      <Button fx:id="btnStart" layoutX="25.0" layoutY="127.0" mnemonicParsing="false" onAction="#btnStartClicked" prefHeight="26.0" prefWidth="73.0" text="Start" />
+      <Label layoutX="25.0" layoutY="21.0" text="time between next car:" />
+      <Label layoutX="26.0" layoutY="60.0" text="number of cars:" />
+      <CheckBox fx:id="chkbxSpeedSimulation" layoutX="25.0" layoutY="94.0" mnemonicParsing="false" text="speed simulation" />
+      <Label fx:id="lblMessage" layoutX="17.0" layoutY="159.0" prefHeight="16.0" prefWidth="365.0" style="-fx-background-color: yellow;" text="..." />
+      <TextField fx:id="txtTimeCars" layoutX="277.0" layoutY="17.0" prefHeight="26.0" prefWidth="73.0" />
+      <TextField fx:id="txtNrCars" layoutX="277.0" layoutY="56.0" prefHeight="26.0" prefWidth="73.0" />
+      <Button fx:id="btnStop" layoutX="108.0" layoutY="127.0" mnemonicParsing="false" onAction="#btnStopClicked" prefHeight="26.0" prefWidth="73.0" text="Stop" />
+      <Button fx:id="btnViewer" layoutX="191.0" layoutY="127.0" mnemonicParsing="false" onAction="#btnViewerClicked" prefHeight="26.0" prefWidth="73.0" text="Viewer" />
+   </children>
+</Pane>

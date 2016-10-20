@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkg04_mekiv2;
+package pkg01_mekiv1;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,9 +12,9 @@ import javafx.fxml.Initializable;
 /**
  * FXML Controller class
  *
- * @author schueler
+ * @author Manuel Sammer
  */
-public class FXMLDocument_SecondGUIController implements Initializable {
+public class ViewerGUIController implements Initializable {
 
     /**
      * Initializes the controller class.
