@@ -75,6 +75,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\Database.cs" />
+    <Compile Include="Models\Einsatzzuordnung.cs" />
+    <Compile Include="Models\Mitarbeiter.cs" />
+    <Compile Include="Models\Strassenabschnitt.cs" />
+    <Compile Include="Models\Strassennetz.cs" />
+    <Compile Include="Models\Teilstrecke.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">

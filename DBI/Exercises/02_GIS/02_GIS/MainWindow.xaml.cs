@@ -24,5 +24,15 @@ namespace _02_GIS
         {
             InitializeComponent();
         }
+
+        private void btnConnect_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnRäumungsauftrag_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
