@@ -1,0 +1,468 @@
+DROP TABLE teilstrecke CASCADE CONSTRAINTS;
+CREATE TABLE teilstrecke (
+	id varchar2(3) PRIMARY KEY,
+ 	faktor integer,
+	shape SDO_GEOMETRY
+);
+INSERT INTO user_sdo_geom_metadata
+( TABLE_NAME,
+COLUMN_NAME,
+DIMINFO,
+SRID
+)
+VALUES
+( 'teilstrecke',
+'shape',
+SDO_DIM_ARRAY( -- 20X20 grid
+SDO_DIM_ELEMENT('X', 0, 20, 0.005),
+SDO_DIM_ELEMENT('Y', 0, 20, 0.005)
+),
+NULL -- SRID
+);
+
+CREATE INDEX index_teilstrecke ON teilstrecke(shape) INDEXTYPE IS MDSYS.SPATIAL_INDEX;
+
+
+--1
+INSERT INTO teilstrecke VALUES('G1',10, 
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(10,10, 300,10)
+	)
+);
+--2
+INSERT INTO teilstrecke VALUES('G5',5,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(300,10, 450,10)
+	)
+);
+--3
+INSERT INTO teilstrecke VALUES('G6', 5,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(500,150, 450,10)
+	)
+);
+--4
+INSERT INTO teilstrecke VALUES('G2', 10,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(300,10, 250,200)
+	)
+);
+--5
+INSERT INTO teilstrecke VALUES('G3', 10,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(100,200, 250,200)
+	)
+);
+--6
+INSERT INTO teilstrecke VALUES('G4',10,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(10,10, 100,200)
+	)
+);
+--7
+INSERT INTO teilstrecke VALUES('G9', 1,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(300,300, 250,200)
+	)
+);
+
+--8
+INSERT INTO teilstrecke VALUES('G8', 5,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(400,200, 300,300)
+	)
+);
+--9
+INSERT INTO teilstrecke VALUES('B4',1, 
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(400,200, 350,1000)
+	)
+);
+--10
+INSERT INTO teilstrecke VALUES('B3', 1,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(500,150, 400,200)
+	)
+);
+--11
+INSERT INTO teilstrecke VALUES('B2', 1,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(600,10, 500,150)
+	)
+);
+--12
+INSERT INTO teilstrecke VALUES('G10', 1,
+	SDO_GEOMETRY(
+		2002,
+		NULL,			
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(100,400, 300,300)
+	)
+);
+--13
+INSERT INTO teilstrecke VALUES('G7', 5,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(600,10, 450,10)
+	)
+);
+--14
+INSERT INTO teilstrecke VALUES('B1', 20,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(600,10, 900,50)
+	)
+);
+
+--15
+INSERT INTO teilstrecke VALUES('G12', 20,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(600,10, 750,150)
+	)
+);
+--16
+INSERT INTO teilstrecke VALUES('G13', 20,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(900,200, 750,150)
+	)
+);
+--17
+INSERT INTO teilstrecke VALUES('G14', 20,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(900,50, 900,200)
+	)
+);
+--18
+INSERT INTO teilstrecke VALUES('G15', 1,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(1100,900, 900,200)
+	)
+);
+
+--19
+INSERT INTO teilstrecke VALUES('G16', 1,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(1100,900, 350,1000)
+	)
+);
+
+--20
+INSERT INTO teilstrecke VALUES('G11',1,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(100,400, 100,200)
+	)
+);
+--21
+INSERT INTO teilstrecke VALUES('G17', 1,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(500,150, 600,500)
+	)
+);
+--22
+INSERT INTO teilstrecke VALUES('G18',1,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(600,500, 700,600)
+	)
+);
+--23
+INSERT INTO teilstrecke VALUES('G19', 1,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(700,600, 650,800)
+	)
+);
+--24
+INSERT INTO teilstrecke VALUES('G20', 1,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(650,800, 550,750)
+	)
+);
+--25
+INSERT INTO teilstrecke VALUES('G21', 1,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(550,750, 500,550)
+	)
+);
+--26
+INSERT INTO teilstrecke VALUES('G22', 1,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(500,550, 600,500)
+	)
+);
+--27
+INSERT INTO teilstrecke VALUES('G23', 1,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(350,1000, 550,750)
+	)
+);
+--28
+INSERT INTO teilstrecke VALUES('G24', 1,
+	SDO_GEOMETRY(
+		2002,
+		NULL,
+		NULL,
+		SDO_ELEM_INFO_ARRAY(1,2,1), -- compound line string
+		SDO_ORDINATE_ARRAY(350,1000, 100,400)
+	)
+);
+drop table strassenabschnitt cascade constraints;
+Create table strassenabschnitt(
+	aid varchar2(10) primary key,
+	abschnitt varchar2(30));
+
+insert into strassenabschnitt values ('A1','Gebiet Ost');
+insert into strassenabschnitt values ('A2','Gebiet West');
+insert into strassenabschnitt values ('A1-1','Ost Berg');
+insert into strassenabschnitt values ('A1-2','Ost Zentrum');
+insert into strassenabschnitt values ('A1-3','Ost Industrie');
+insert into strassenabschnitt values ('A1-3-1','Industrie Nord');
+insert into strassenabschnitt values ('A1-3-2','Industrie Süd');
+insert into strassenabschnitt values ('A2-1','West Schule');
+insert into strassenabschnitt values ('A2-2','See Erholungsgebiet');
+insert into strassenabschnitt values ('A2-2-1','See Ringuferstrasse');
+insert into strassenabschnitt values ('G1','Gemeindestrasse');
+insert into strassenabschnitt values ('G2','Gemeindestrasse');
+insert into strassenabschnitt values ('G3','Gemeindestrasse');
+insert into strassenabschnitt values ('G4','Gemeindestrasse');
+insert into strassenabschnitt values ('G5','Gemeindestrasse');
+insert into strassenabschnitt values ('G6','Gemeindestrasse');
+insert into strassenabschnitt values ('G7','Gemeindestrasse');
+insert into strassenabschnitt values ('G8','Gemeindestrasse');
+insert into strassenabschnitt values ('G9','Gemeindestrasse');
+insert into strassenabschnitt values ('G10','Gemeindestrasse');
+insert into strassenabschnitt values ('G11','Gemeindestrasse');
+insert into strassenabschnitt values ('G12','Gemeindestrasse');
+insert into strassenabschnitt values ('G13','Gemeindestrasse');
+insert into strassenabschnitt values ('G14','Gemeindestrasse');
+insert into strassenabschnitt values ('G15','Gemeindestrasse');
+insert into strassenabschnitt values ('G16','Gemeindestrasse');
+insert into strassenabschnitt values ('G17','Gemeindestrasse');
+insert into strassenabschnitt values ('G18','Gemeindestrasse');
+insert into strassenabschnitt values ('G19','Gemeindestrasse');
+insert into strassenabschnitt values ('G20','Gemeindestrasse');
+insert into strassenabschnitt values ('G21','Gemeindestrasse');
+insert into strassenabschnitt values ('G22','Gemeindestrasse');
+insert into strassenabschnitt values ('G23','Gemeindestrasse');
+insert into strassenabschnitt values ('G24','Gemeindestrasse');
+insert into strassenabschnitt values ('B1','Bundestrasse');
+insert into strassenabschnitt values ('B2','Bundestrasse');
+insert into strassenabschnitt values ('B3','Bundestrasse');
+insert into strassenabschnitt values ('B4','Bundestrasse');
+
+drop table strassennetz cascade constraints;
+create table strassennetz(
+	aid1 varchar2(10),
+	aid2 varchar2(10),
+	primary key (aid1,aid2),
+	foreign key (aid1) references strassenabschnitt(aid),
+	foreign key (aid2) references strassenabschnitt(aid));
+insert into strassennetz values ('A1','A1-1');
+insert into strassennetz values ('A1','A1-2');
+insert into strassennetz values ('A1','A1-3');
+insert into strassennetz values ('A1-1','G1');
+insert into strassennetz values ('A1-1','G2');
+insert into strassennetz values ('A1-1','G3');
+insert into strassennetz values ('A1-1','G4');
+insert into strassennetz values ('A1-2','G5');
+insert into strassennetz values ('A1-2','G6');
+insert into strassennetz values ('A1-2','G7');
+insert into strassennetz values ('A1-2','G8');
+insert into strassennetz values ('A1-2','G9');
+insert into strassennetz values ('A1-2','G2');
+insert into strassennetz values ('A1-2','B3');
+insert into strassennetz values ('A1-2','B2');
+insert into strassennetz values ('A1-3','A1-3-1');
+insert into strassennetz values ('A1-3','A1-3-2');
+insert into strassennetz values ('A1-3-1','G3');
+insert into strassennetz values ('A1-3-1','G9');
+insert into strassennetz values ('A1-3-1','G10');
+insert into strassennetz values ('A1-3-1','G11');
+insert into strassennetz values ('A1-3-2','G10');
+insert into strassennetz values ('A1-3-2','G8');
+insert into strassennetz values ('A1-3-2','G24');
+insert into strassennetz values ('A1-3-2','B4');
+insert into strassennetz values ('A2','A2-1');
+insert into strassennetz values ('A2','A2-2');
+insert into strassennetz values ('A2-2','A2-2-1');
+insert into strassennetz values ('A2-2','B4');
+insert into strassennetz values ('A2-2','B3');
+insert into strassennetz values ('A2-2','B2');
+insert into strassennetz values ('A2-2','G12');
+insert into strassennetz values ('A2-2','G13');
+insert into strassennetz values ('A2-2','G15');
+insert into strassennetz values ('A2-2','G16');
+insert into strassennetz values ('A2-2','G17');
+insert into strassennetz values ('A2-2','G23');
+insert into strassennetz values ('A2-2-1','G18');
+insert into strassennetz values ('A2-2-1','G19');
+insert into strassennetz values ('A2-2-1','G20');
+insert into strassennetz values ('A2-2-1','G21');
+insert into strassennetz values ('A2-2-1','G22');
+insert into strassennetz values ('A2-1','G12');
+insert into strassennetz values ('A2-1','G13');
+insert into strassennetz values ('A2-1','G14');
+insert into strassennetz values ('A2-1','B1');
+
+drop table mitarbeiter cascade constraints;
+create table mitarbeiter(
+	ma_nr integer primary key,
+	ma_name varchar2(30),
+	arbeitspensum integer);
+
+-- arbeitspensum in Meter
+insert into mitarbeiter values(1,'Einstein',30000);
+insert into mitarbeiter values(2,'Zweistein',40000);
+insert into mitarbeiter values(3,'Dreistein',30000);
+insert into mitarbeiter values(4,'Vierstein',40000);
+insert into mitarbeiter values(5,'Fünfstein',50000);
+insert into mitarbeiter values(6,'Sechsstein',6000);
+insert into mitarbeiter values(7,'Siebenstein',7000);
+insert into mitarbeiter values(8,'8stein',8000);
+
+drop table einsatzzuordnung cascade constraints;
+create table einsatzzuordnung(
+	aid varchar2(10),
+	ma_nr integer,
+	primary key (aid,ma_nr),
+	foreign key (aid) references strassenabschnitt(aid),
+	foreign key (ma_nr) references mitarbeiter(ma_nr));
+
+insert into einsatzzuordnung values('A1',1);
+insert into einsatzzuordnung values('A1',2);
+insert into einsatzzuordnung values('A1',3);
+insert into einsatzzuordnung values('A2',3);
+insert into einsatzzuordnung values('A2',4);
+insert into einsatzzuordnung values('A2',5);
+insert into einsatzzuordnung values('A1-1',4);
+insert into einsatzzuordnung values('A1-2',6);
+insert into einsatzzuordnung values('A1-3',7);
+insert into einsatzzuordnung values('A2-1',1);
+insert into einsatzzuordnung values('A2-2',7);
+insert into einsatzzuordnung values('A2-2-1',8);
+insert into einsatzzuordnung values('A1',8);
+
+drop table r_auftrag cascade constraints;
+create table r_auftrag(
+	ra_nr integer primary key,
+	aid varchar2(10),
+	ma_nr integer,
+	foreign key (aid) references strassenabschnitt(aid),
+	foreign key (ma_nr) references mitarbeiter(ma_nr));
+	
+drop table ra_strecke cascade constraints;
+create table ra_strecke(
+	ra_nr integer,
+	aid varchar2(10),
+	laenge number(10,2),
+	primary key (ra_nr,aid),
+	foreign key (ra_nr) references r_auftrag(ra_nr),
+	foreign key (aid) references strassenabschnitt(aid));
+
+drop table schneefall cascade constraints;
+create table schneefall(
+	aid varchar2(10) primary key,
+	schneehoehe integer);
+
+commit;
