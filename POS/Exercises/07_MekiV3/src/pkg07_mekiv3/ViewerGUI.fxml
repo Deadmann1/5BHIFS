@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.45" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg07_mekiv3.ViewerGUIController">
+   <children>
+      <VBox fx:id="boxCars" layoutX="14.0" layoutY="11.0" prefHeight="348.0" prefWidth="576.0">
+         <children>
+            <HBox prefHeight="28.0" prefWidth="576.0">
+               <children>
+                  <Button fx:id="btnStart" mnemonicParsing="false" onAction="#btnStartClicked" text="Start" />
+               </children>
+            </HBox>
+            <Pane prefHeight="67.0" prefWidth="576.0">
+               <children>
+                  <Rectangle fx:id="recPlaceOrder" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="45.0" layoutX="113.0" layoutY="11.0" stroke="BLACK" strokeType="INSIDE" width="107.0" />
+                  <Rectangle fx:id="recPayOrder" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="45.0" layoutX="246.0" layoutY="11.0" stroke="BLACK" strokeType="INSIDE" width="107.0" />
+                  <Rectangle fx:id="recReceiveFood" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="45.0" layoutX="374.0" layoutY="11.0" stroke="BLACK" strokeType="INSIDE" width="115.0" />
+                  <Label layoutX="130.0" layoutY="25.0" text="Place Order" />
+                  <Label layoutX="268.0" layoutY="25.0" text="Pay Order" />
+                  <Label layoutX="390.0" layoutY="25.0" text="Receive Food" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <ListView fx:id="listViewLog" layoutX="14.0" layoutY="369.0" prefHeight="117.0" prefWidth="576.0" />
+   </children>
+</AnchorPane>
