@@ -14,7 +14,7 @@ namespace MedianFilter
         private static Database _instance;
         public Bitmap ImageBefore;
         public Bitmap ImageAfter;
-        public List<string> Filters = new List<string>() { "Red", "Blue", "Green", "MedianFilter 11x11", "MedianFilter 7x7", "MedianFilter 20x20"};
+        public List<string> Filters = new List<string>() { "Red", "Blue", "Green", "MedianFilter"};
 
         public Database() { }
 

@@ -15,11 +15,13 @@
                     <MenuItem x:Name="MenuItemExit" Header="Exit" HorizontalAlignment="Left" Width="140" Click="MenuItemExit_Click"/>
                 </MenuItem>
             </Menu>
-            <Grid Height="50" VerticalAlignment="Top" DockPanel.Dock="Top" Margin="0,0,10,0">
-                <ComboBox x:Name="comboBoxFilter" HorizontalAlignment="Left" Margin="10,23,0,3" Width="120"/>
-                <Label x:Name="lblFilter" Content="Filter:" VerticalAlignment="Top" Height="34" Margin="10,0,385,0"/>
-                <Button x:Name="btnFilter" Content="Filter" HorizontalAlignment="Left" Margin="159,23,0,3" Width="75" Click="btnFilter_Click"/>
-                <ProgressBar x:Name="progessBar" Height="24" VerticalAlignment="Top" Margin="265,23,10.2,0"/>
+            <Grid Height="55" VerticalAlignment="Top" DockPanel.Dock="Top" Margin="0,0,10,0">
+                <ComboBox x:Name="comboBoxFilter" HorizontalAlignment="Left" Margin="10,28,0,3" Width="120" SelectionChanged="comboBoxFilter_SelectionChanged"/>
+                <Label x:Name="lblFilter" Content="Filter:" VerticalAlignment="Top" Height="34" Margin="10,0,456,0"/>
+                <Button x:Name="btnFilter" Content="Filter" HorizontalAlignment="Left" Margin="135,28,0,3" Width="75" Click="btnFilter_Click"/>
+                <ProgressBar x:Name="progessBar" Height="24" VerticalAlignment="Top" Margin="215,28,10,0"/>
+                <TextBox x:Name="txtSize" HorizontalAlignment="Left" Height="23" Margin="215,0,0,0" VerticalAlignment="Top" Width="25" MaxLength="2" PreviewTextInput="NumberValidationTextBox"/>
+                <Label x:Name="lblSize" Content="Matrix Size:" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="24" Width="70"/>
             </Grid>
             <Grid Margin="0,0.4,0,-0.4">
                 <Grid.ColumnDefinitions>

@@ -7,6 +7,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,6 +31,8 @@ namespace MedianFilter
             InitializeComponent();
             this.comboBoxFilter.ItemsSource = Database.Instance.Filters;
             this.comboBoxFilter.SelectedIndex = 0;
+            this.txtSize.Visibility = Visibility.Hidden;
+            this.lblSize.Visibility = Visibility.Hidden;
         }
 
         private void MenuItemExit_Click(object sender, RoutedEventArgs e)
@@ -53,74 +56,76 @@ namespace MedianFilter
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
         {
-            if (Database.Instance.ImageBefore == null)
+            try
             {
-                MessageBox.Show("You should select an Image before filtering!", "Error:", MessageBoxButton.OK);
-            }
-            else
-            {
-                ChannelFiltering filter = new ChannelFiltering();
-                bool colourFilter = false;
-                int medianFilterMatrixSize = 0;
-                switch (comboBoxFilter.SelectedItem.ToString())
+                if (Database.Instance.ImageBefore == null)
                 {
-                    case "Red":
-                        filter.Red = new AForge.IntRange(0, 0);
-                        filter.Blue = new AForge.IntRange(0, 255);
-                        filter.Green = new AForge.IntRange(0, 255);
-                        colourFilter = true;
-                        break;
-                    case "Blue":
-                        filter.Red = new AForge.IntRange(0, 255);
-                        filter.Blue = new AForge.IntRange(0, 0);
-                        filter.Green = new AForge.IntRange(0, 255);
-                        colourFilter = true;
-                        break;
-                    case "Green":
-                        filter.Red = new AForge.IntRange(0, 255);
-                        filter.Blue = new AForge.IntRange(0, 255);
-                        filter.Green = new AForge.IntRange(0, 0);
-                        colourFilter = true;
-                        break;
-                    case "MedianFilter 20x20":
-                        colourFilter = false;
-                        medianFilterMatrixSize = 20;
-                        break;
-                    case "MedianFilter 11x11":
-                        colourFilter = false;
-                        medianFilterMatrixSize = 11;
-                        break;
-                    case "MedianFilter 7x7":
-                        colourFilter = false;
-                        medianFilterMatrixSize = 7;
-                        break;
-                }
-                Bitmap tmp = Database.Instance.ImageBefore;
-                if (colourFilter) { 
-                    Database.Instance.ImageAfter = filter.Apply(tmp);
+                    MessageBox.Show("You should select an Image before filtering!", "Error:", MessageBoxButton.OK);
                 }
                 else
                 {
-                    Database.Instance.ImageAfter = MedianFilterFactory.DoMedianFilter2(tmp, medianFilterMatrixSize);
+                    ChannelFiltering filter = new ChannelFiltering();
+                    bool colourFilter = false;
+                    switch (comboBoxFilter.SelectedItem.ToString())
+                    {
+                        case "Red":
+                            filter.Red = new AForge.IntRange(0, 0);
+                            filter.Blue = new AForge.IntRange(0, 255);
+                            filter.Green = new AForge.IntRange(0, 255);
+                            colourFilter = true;
+                            break;
+                        case "Blue":
+                            filter.Red = new AForge.IntRange(0, 255);
+                            filter.Blue = new AForge.IntRange(0, 0);
+                            filter.Green = new AForge.IntRange(0, 255);
+                            colourFilter = true;
+                            break;
+                        case "Green":
+                            filter.Red = new AForge.IntRange(0, 255);
+                            filter.Blue = new AForge.IntRange(0, 255);
+                            filter.Green = new AForge.IntRange(0, 0);
+                            colourFilter = true;
+                            break;
+                        case "MedianFilter":
+                            colourFilter = false;
+                            break;
+                    }
+                    Bitmap tmp = Database.Instance.ImageBefore;
+                    if (colourFilter)
+                    {
+                        Database.Instance.ImageAfter = filter.Apply(tmp);
+                    }
+                    else
+                    {
+                        if (this.txtSize.Text == null || int.Parse(this.txtSize.Text) <= 0)
+                        {
+                            throw new Exception("You need to input an Matrix size of 2-99 for the MedianFilter !");
+                        }
+                        Database.Instance.ImageAfter = MedianFilterFactory.DoMedianFilter2(tmp, int.Parse(this.txtSize.Text));
+                    }
+                    imageAfter.Source = BitmapToImageSource(Database.Instance.ImageAfter);
                 }
-                imageAfter.Source = BitmapToImageSource(Database.Instance.ImageAfter);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error happend: " + ex.Message, "Error:", MessageBoxButton.OK);
             }
         }
 
         private BitmapImage BitmapToImageSource(Bitmap bitmap)
         {
-            using (MemoryStream memory = new MemoryStream())
-            {
-                bitmap.Save(memory, System.Drawing.Imaging.ImageFormat.Bmp);
-                memory.Position = 0;
-                BitmapImage bitmapimage = new BitmapImage();
-                bitmapimage.BeginInit();
-                bitmapimage.StreamSource = memory;
-                bitmapimage.CacheOption = BitmapCacheOption.OnLoad;
-                bitmapimage.EndInit();
+                using (MemoryStream memory = new MemoryStream())
+                {
+                    bitmap.Save(memory, System.Drawing.Imaging.ImageFormat.Bmp);
+                    memory.Position = 0;
+                    BitmapImage bitmapimage = new BitmapImage();
+                    bitmapimage.BeginInit();
+                    bitmapimage.StreamSource = memory;
+                    bitmapimage.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmapimage.EndInit();
 
-                return bitmapimage;
-            }
+                    return bitmapimage;
+                }
         }
 
         private void MenuItemSave_Click(object sender, RoutedEventArgs e)
@@ -149,6 +154,26 @@ namespace MedianFilter
                     Database.Instance.ImageAfter.Save(dialog.FileName, format);
                 }
             }
+        }
+
+        private void comboBoxFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(comboBoxFilter.SelectedItem.ToString() == "MedianFilter")
+            {
+                this.txtSize.Visibility = Visibility.Visible;
+                this.lblSize.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                this.txtSize.Visibility = Visibility.Hidden;
+                this.lblSize.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }
