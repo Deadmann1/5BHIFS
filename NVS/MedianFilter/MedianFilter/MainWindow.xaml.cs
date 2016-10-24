@@ -26,6 +26,7 @@ namespace MedianFilter
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool isRunning = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace MedianFilter
             this.comboBoxFilter.SelectedIndex = 0;
             this.txtSize.Visibility = Visibility.Hidden;
             this.lblSize.Visibility = Visibility.Hidden;
+            this.lblTime.Visibility = Visibility.Hidden;
         }
 
         private void MenuItemExit_Click(object sender, RoutedEventArgs e)
@@ -54,60 +56,85 @@ namespace MedianFilter
             }
         }
 
-        private void btnFilter_Click(object sender, RoutedEventArgs e)
+        private async void btnFilter_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                if (Database.Instance.ImageBefore == null)
+                if (!isRunning)
                 {
-                    MessageBox.Show("You should select an Image before filtering!", "Error:", MessageBoxButton.OK);
-                }
-                else
-                {
-                    ChannelFiltering filter = new ChannelFiltering();
-                    bool colourFilter = false;
-                    switch (comboBoxFilter.SelectedItem.ToString())
+                    lblTime.Content = "";
+                    isRunning = true;
+                    if (Database.Instance.ImageBefore == null)
                     {
-                        case "Red":
-                            filter.Red = new AForge.IntRange(0, 0);
-                            filter.Blue = new AForge.IntRange(0, 255);
-                            filter.Green = new AForge.IntRange(0, 255);
-                            colourFilter = true;
-                            break;
-                        case "Blue":
-                            filter.Red = new AForge.IntRange(0, 255);
-                            filter.Blue = new AForge.IntRange(0, 0);
-                            filter.Green = new AForge.IntRange(0, 255);
-                            colourFilter = true;
-                            break;
-                        case "Green":
-                            filter.Red = new AForge.IntRange(0, 255);
-                            filter.Blue = new AForge.IntRange(0, 255);
-                            filter.Green = new AForge.IntRange(0, 0);
-                            colourFilter = true;
-                            break;
-                        case "MedianFilter":
-                            colourFilter = false;
-                            break;
-                    }
-                    Bitmap tmp = Database.Instance.ImageBefore;
-                    if (colourFilter)
-                    {
-                        Database.Instance.ImageAfter = filter.Apply(tmp);
+                        throw new Exception("You should select an Image before filtering!");
                     }
                     else
                     {
-                        if (this.txtSize.Text == null || int.Parse(this.txtSize.Text) <= 0)
+                        ChannelFiltering filter = new ChannelFiltering();
+                        bool colourFilter = false;
+                        switch (comboBoxFilter.SelectedItem.ToString())
                         {
-                            throw new Exception("You need to input an Matrix size of 2-99 for the MedianFilter !");
+                            case "Red":
+                                filter.Red = new AForge.IntRange(0, 0);
+                                filter.Blue = new AForge.IntRange(0, 255);
+                                filter.Green = new AForge.IntRange(0, 255);
+                                colourFilter = true;
+                                break;
+                            case "Blue":
+                                filter.Red = new AForge.IntRange(0, 255);
+                                filter.Blue = new AForge.IntRange(0, 0);
+                                filter.Green = new AForge.IntRange(0, 255);
+                                colourFilter = true;
+                                break;
+                            case "Green":
+                                filter.Red = new AForge.IntRange(0, 255);
+                                filter.Blue = new AForge.IntRange(0, 255);
+                                filter.Green = new AForge.IntRange(0, 0);
+                                colourFilter = true;
+                                break;
+                            case "MedianFilter":
+                                colourFilter = false;
+                                break;
                         }
-                        Database.Instance.ImageAfter = MedianFilterFactory.DoMedianFilter2(tmp, int.Parse(this.txtSize.Text));
+                        Bitmap tmp = Database.Instance.ImageBefore;
+                        if (colourFilter)
+                        {
+                            Database.Instance.ImageAfter = filter.Apply(tmp);
+                        }
+                        else
+                        {
+                            if (this.txtSize.Text == null || int.Parse(this.txtSize.Text) <= 1)
+                            {
+                                throw new Exception("You need to input an Matrix size of 2-99 for the MedianFilter !");
+                            }
+                            
+                            this.progessBar.Maximum = tmp.Width;
+                            var progressHandler = new Progress<int>(value =>
+                            {
+                                progessBar.Value = value;
+                            });
+                            var progress = progressHandler as IProgress<int>;
+                            var watch = System.Diagnostics.Stopwatch.StartNew();
+                            Database.Instance.ImageAfter = await MedianFilterFactory.DoMedianFilter2(tmp, int.Parse(this.txtSize.Text), progress);
+                            watch.Stop();
+                            var ms = watch.ElapsedMilliseconds;
+                            lblTime.Content = "" + ms + " milliseconds or " + (ms / 1000) + " seconds";
+                        }
+                        imageAfter.Source = BitmapToImageSource(Database.Instance.ImageAfter);
+                        isRunning = false;
                     }
-                    imageAfter.Source = BitmapToImageSource(Database.Instance.ImageAfter);
+                }
+                else
+                {
+                    throw new Exception("You need to wait for the first filtering to end!");
                 }
             }
             catch (Exception ex)
             {
+                if(ex.Message != "You need to wait for the first filtering to end!")
+                {
+                    isRunning = false;
+                }
                 MessageBox.Show("Error happend: " + ex.Message, "Error:", MessageBoxButton.OK);
             }
         }
@@ -162,11 +189,13 @@ namespace MedianFilter
             {
                 this.txtSize.Visibility = Visibility.Visible;
                 this.lblSize.Visibility = Visibility.Visible;
+                this.lblTime.Visibility = Visibility.Visible;
             }
             else
             {
                 this.txtSize.Visibility = Visibility.Hidden;
                 this.lblSize.Visibility = Visibility.Hidden;
+                this.lblTime.Visibility = Visibility.Hidden;
             }
         }
 

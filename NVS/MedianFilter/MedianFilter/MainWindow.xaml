@@ -22,6 +22,7 @@
                 <ProgressBar x:Name="progessBar" Height="24" VerticalAlignment="Top" Margin="215,28,10,0"/>
                 <TextBox x:Name="txtSize" HorizontalAlignment="Left" Height="23" Margin="215,0,0,0" VerticalAlignment="Top" Width="25" MaxLength="2" PreviewTextInput="NumberValidationTextBox"/>
                 <Label x:Name="lblSize" Content="Matrix Size:" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="24" Width="70"/>
+                <Label x:Name="lblTime" Content="" HorizontalAlignment="Left" Height="23" Margin="260,0,0,0" VerticalAlignment="Top" Width="230"/>
             </Grid>
             <Grid Margin="0,0.4,0,-0.4">
                 <Grid.ColumnDefinitions>
