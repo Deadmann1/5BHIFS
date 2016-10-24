@@ -53,33 +53,53 @@ namespace MedianFilter
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
         {
-            if(Database.Instance.ImageBefore == null)
+            if (Database.Instance.ImageBefore == null)
             {
                 MessageBox.Show("You should select an Image before filtering!", "Error:", MessageBoxButton.OK);
             }
             else
             {
                 ChannelFiltering filter = new ChannelFiltering();
+                bool colourFilter = false;
+                int medianFilterMatrixSize = 0;
                 switch (comboBoxFilter.SelectedItem.ToString())
                 {
                     case "Red":
                         filter.Red = new AForge.IntRange(0, 0);
                         filter.Blue = new AForge.IntRange(0, 255);
                         filter.Green = new AForge.IntRange(0, 255);
+                        colourFilter = true;
                         break;
                     case "Blue":
                         filter.Red = new AForge.IntRange(0, 255);
                         filter.Blue = new AForge.IntRange(0, 0);
                         filter.Green = new AForge.IntRange(0, 255);
+                        colourFilter = true;
                         break;
                     case "Green":
                         filter.Red = new AForge.IntRange(0, 255);
                         filter.Blue = new AForge.IntRange(0, 255);
                         filter.Green = new AForge.IntRange(0, 0);
+                        colourFilter = true;
+                        break;
+                    case "MedianFilter 11x11":
+                        colourFilter = false;
+                        medianFilterMatrixSize = 11;
+                        break;
+                    case "MedianFilter 7x7":
+                        colourFilter = false;
+                        medianFilterMatrixSize = 7;
                         break;
                 }
                 Bitmap tmp = Database.Instance.ImageBefore;
-                Database.Instance.ImageAfter = filter.Apply(tmp);
+                if (colourFilter) { 
+                    Database.Instance.ImageAfter = filter.Apply(tmp);
+                }
+                else
+                {
+
+                    Database.Instance.ImageAfter = MedianFilterFactory.DoMedianFilter2(tmp, medianFilterMatrixSize);
+                }
                 imageAfter.Source = BitmapToImageSource(Database.Instance.ImageAfter);
             }
         }
