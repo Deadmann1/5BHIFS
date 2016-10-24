@@ -82,6 +82,10 @@ namespace MedianFilter
                         filter.Green = new AForge.IntRange(0, 0);
                         colourFilter = true;
                         break;
+                    case "MedianFilter 20x20":
+                        colourFilter = false;
+                        medianFilterMatrixSize = 20;
+                        break;
                     case "MedianFilter 11x11":
                         colourFilter = false;
                         medianFilterMatrixSize = 11;
@@ -97,7 +101,6 @@ namespace MedianFilter
                 }
                 else
                 {
-
                     Database.Instance.ImageAfter = MedianFilterFactory.DoMedianFilter2(tmp, medianFilterMatrixSize);
                 }
                 imageAfter.Source = BitmapToImageSource(Database.Instance.ImageAfter);
