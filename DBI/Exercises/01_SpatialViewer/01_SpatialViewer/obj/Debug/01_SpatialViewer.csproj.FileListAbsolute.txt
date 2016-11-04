@@ -1,0 +1,15 @@
+C:\Users\Manuel\OneDrive Meins\OneDrive for Business\5 BHIFS\DBI 1\Aufgaben\01_SpatialViewer\01_SpatialViewer\bin\Debug\01_SpatialViewer.exe.config
+C:\Users\Manuel\OneDrive Meins\OneDrive for Business\5 BHIFS\DBI 1\Aufgaben\01_SpatialViewer\01_SpatialViewer\obj\Debug\01_SpatialViewer.csprojResolveAssemblyReference.cache
+C:\Users\Manuel\OneDrive Meins\OneDrive for Business\5 BHIFS\DBI 1\Aufgaben\01_SpatialViewer\01_SpatialViewer\obj\Debug\MainWindow.g.cs
+C:\Users\Manuel\OneDrive Meins\OneDrive for Business\5 BHIFS\DBI 1\Aufgaben\01_SpatialViewer\01_SpatialViewer\obj\Debug\App.g.cs
+C:\Users\Manuel\OneDrive Meins\OneDrive for Business\5 BHIFS\DBI 1\Aufgaben\01_SpatialViewer\01_SpatialViewer\obj\Debug\01_SpatialViewer_MarkupCompile.cache
+C:\Users\Manuel\OneDrive Meins\OneDrive for Business\5 BHIFS\DBI 1\Aufgaben\01_SpatialViewer\01_SpatialViewer\obj\Debug\01_SpatialViewer_MarkupCompile.lref
+C:\Users\Manuel\OneDrive Meins\OneDrive for Business\5 BHIFS\DBI 1\Aufgaben\01_SpatialViewer\01_SpatialViewer\bin\Debug\01_SpatialViewer.exe
+C:\Users\Manuel\OneDrive Meins\OneDrive for Business\5 BHIFS\DBI 1\Aufgaben\01_SpatialViewer\01_SpatialViewer\bin\Debug\01_SpatialViewer.pdb
+C:\Users\Manuel\OneDrive Meins\OneDrive for Business\5 BHIFS\DBI 1\Aufgaben\01_SpatialViewer\01_SpatialViewer\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Manuel\OneDrive Meins\OneDrive for Business\5 BHIFS\DBI 1\Aufgaben\01_SpatialViewer\01_SpatialViewer\obj\Debug\MainWindow.baml
+C:\Users\Manuel\OneDrive Meins\OneDrive for Business\5 BHIFS\DBI 1\Aufgaben\01_SpatialViewer\01_SpatialViewer\obj\Debug\01_SpatialViewer.g.resources
+C:\Users\Manuel\OneDrive Meins\OneDrive for Business\5 BHIFS\DBI 1\Aufgaben\01_SpatialViewer\01_SpatialViewer\obj\Debug\_01_SpatialViewer.Properties.Resources.resources
+C:\Users\Manuel\OneDrive Meins\OneDrive for Business\5 BHIFS\DBI 1\Aufgaben\01_SpatialViewer\01_SpatialViewer\obj\Debug\01_SpatialViewer.csproj.GenerateResource.Cache
+C:\Users\Manuel\OneDrive Meins\OneDrive for Business\5 BHIFS\DBI 1\Aufgaben\01_SpatialViewer\01_SpatialViewer\obj\Debug\01_SpatialViewer.exe
+C:\Users\Manuel\OneDrive Meins\OneDrive for Business\5 BHIFS\DBI 1\Aufgaben\01_SpatialViewer\01_SpatialViewer\obj\Debug\01_SpatialViewer.pdb

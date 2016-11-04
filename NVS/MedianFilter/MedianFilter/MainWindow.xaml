@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedianFilter"
         mc:Ignorable="d"
-        Title="Median Filter Sammer Manuel" Height="350" Width="525" MinWidth="525" MinHeight="350">
+        Title="Median Filter Sammer Manuel" Height="380" Width="525" MinWidth="525" MinHeight="350">
     <Grid Margin="0,0,2,2">
         <DockPanel LastChildFill="False" Margin="0,0,-6,3">
             <Menu x:Name="menu" Height="20" VerticalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,10,0">
@@ -15,12 +15,16 @@
                     <MenuItem x:Name="MenuItemExit" Header="Exit" HorizontalAlignment="Left" Width="140" Click="MenuItemExit_Click"/>
                 </MenuItem>
             </Menu>
-            <Grid Height="50" VerticalAlignment="Top" DockPanel.Dock="Top" Margin="0,0,10,0">
-                <ComboBox x:Name="comboBoxFilter" HorizontalAlignment="Left" Margin="10,23,0,3" Width="120"/>
-                <Label x:Name="lblFilter" Content="Filter:" VerticalAlignment="Top" Height="34" Margin="10,0,385,0"/>
-                <Button x:Name="btnFilter" Content="Filter" HorizontalAlignment="Left" Margin="159,23,0,3" Width="75" Click="btnFilter_Click"/>
+            <Grid Height="55" VerticalAlignment="Top" DockPanel.Dock="Top" Margin="0,0,10,0">
+                <ComboBox x:Name="comboBoxFilter" HorizontalAlignment="Left" Margin="10,28,0,3" Width="120" SelectionChanged="comboBoxFilter_SelectionChanged"/>
+                <Label x:Name="lblFilter" Content="Filter:" VerticalAlignment="Top" Height="34" Margin="10,0,456,0"/>
+                <Button x:Name="btnFilter" Content="Filter" HorizontalAlignment="Left" Margin="135,28,0,3" Width="75" Click="btnFilter_Click"/>
+                <ProgressBar x:Name="progessBar" Height="24" VerticalAlignment="Top" Margin="215,28,10,0"/>
+                <TextBox x:Name="txtSize" HorizontalAlignment="Left" Height="23" Margin="215,0,0,0" VerticalAlignment="Top" Width="25" MaxLength="2" PreviewTextInput="NumberValidationTextBox"/>
+                <Label x:Name="lblSize" Content="Matrix Size:" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="24" Width="70"/>
+                <Label x:Name="lblTime" Content="" HorizontalAlignment="Left" Height="23" Margin="260,0,0,0" VerticalAlignment="Top" Width="230"/>
             </Grid>
-            <Grid Margin="0,0,0,10">
+            <Grid Margin="0,0.4,0,-0.4">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="250*"/>
                     <ColumnDefinition Width="267*"/>
