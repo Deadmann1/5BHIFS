@@ -1,0 +1,21 @@
+﻿<Window x:Class="Chat.ChatWindowClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chat"
+        mc:Ignorable="d"
+        Title="Chat_Sammer_Client" Height="350" Width="525" ResizeMode="NoResize" Icon="Apps-Chat-icon.ico">
+    <Grid>
+        <ListBox x:Name="lbChat" Margin="10,50,10,46"/>
+        <TextBox x:Name="txtIP" Height="23" Margin="74,16,342,0" Text="127.0.0.1" VerticalAlignment="Top" MaxLines="1" MaxLength="15"/>
+        <Label x:Name="label" Content="IP-Adress:" Margin="10,13,422,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPort" Height="23" Margin="203,16,270,0" TextWrapping="Wrap" Text="8091" VerticalAlignment="Top" MaxLines="1" MaxLength="4"/>
+        <Label x:Name="label1" Content="Port:" Margin="168,13,308,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnConnect" Content="Connect" Margin="434,16,10,0" VerticalAlignment="Top" Height="23" Click="btnConnect_Click"/>
+        <TextBox x:Name="txtMsg" Margin="10,280,99,10" TextWrapping="Wrap" IsEnabled="False"/>
+        <Button x:Name="btnSend" Content="Send" Margin="434,280,10,10" IsEnabled="False" Click="btnSend_Click"/>
+        <Label x:Name="label2" Content="Username:" HorizontalAlignment="Left" Margin="254,13,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtUsername" Height="23" Margin="325,16,90,0" Text="test" VerticalAlignment="Top" MaxLines="1" MaxLength="20"/>
+    </Grid>
+</Window>

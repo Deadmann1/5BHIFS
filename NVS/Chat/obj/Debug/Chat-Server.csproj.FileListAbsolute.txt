@@ -1,0 +1,15 @@
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\obj\Debug\ChatWindowServer.g.cs
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\obj\Debug\App.g.cs
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\obj\Debug\Chat_MarkupCompile.cache
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\obj\Debug\Chat_MarkupCompile.lref
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\bin\Debug\Chat.exe.config
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\bin\Debug\Chat.exe
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\bin\Debug\Chat.pdb
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\bin\Debug\SimpleTCP.dll
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\obj\Debug\ChatWindowServer.baml
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\obj\Debug\Chat.g.resources
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\obj\Debug\Chat.Properties.Resources.resources
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\obj\Debug\Chat-Server.csproj.GenerateResource.Cache
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\obj\Debug\Chat.exe
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\obj\Debug\Chat.pdb
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\obj\Debug\Chat-Server.csprojResolveAssemblyReference.cache

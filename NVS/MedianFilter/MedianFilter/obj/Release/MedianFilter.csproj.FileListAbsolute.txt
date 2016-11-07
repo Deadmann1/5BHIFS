@@ -18,3 +18,6 @@ C:\Users\Manuel Sammer\Source\Repos\5BHIFS\NVS\MedianFilter\MedianFilter\obj\Rel
 C:\Users\Manuel Sammer\Source\Repos\5BHIFS\NVS\MedianFilter\MedianFilter\obj\Release\MedianFilter.csproj.GenerateResource.Cache
 C:\Users\Manuel Sammer\Source\Repos\5BHIFS\NVS\MedianFilter\MedianFilter\obj\Release\MedianFilter.exe
 C:\Users\Manuel Sammer\Source\Repos\5BHIFS\NVS\MedianFilter\MedianFilter\obj\Release\MedianFilter.pdb
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\MedianFilter\MedianFilter\bin\Release\MedianFilter.exe.config
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\MedianFilter\MedianFilter\obj\Release\MedianFilter.exe
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\MedianFilter\MedianFilter\obj\Release\MedianFilter.pdb
