@@ -1,0 +1,6 @@
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\Chat-Client\bin\Release\Chat-Client.exe.config
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\Chat-Client\obj\Release\ChatWindowClient.g.cs
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\Chat-Client\obj\Release\App.g.cs
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\Chat-Client\obj\Release\Chat-Client_MarkupCompile.cache
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\Chat-Client\obj\Release\Chat-Client_MarkupCompile.lref
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\Chat\Chat-Client\obj\Release\Chat-Client.csprojResolveAssemblyReference.cache

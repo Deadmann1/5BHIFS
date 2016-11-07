@@ -8,7 +8,7 @@
         Title="Chat_Sammer_Client" Height="350" Width="525" ResizeMode="NoResize" Icon="Apps-Chat-icon.ico">
     <Grid>
         <ListBox x:Name="lbChat" Margin="10,50,10,46"/>
-        <TextBox x:Name="txtIP" Height="23" Margin="74,16,342,0" Text="127.0.0.1" VerticalAlignment="Top" MaxLines="1" MaxLength="15"/>
+        <TextBox x:Name="txtIP" Height="23" Margin="74,16,351,0" Text="127.0.0.1" VerticalAlignment="Top" MaxLines="1" MaxLength="15"/>
         <Label x:Name="label" Content="IP-Adress:" Margin="10,13,422,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtPort" Height="23" Margin="203,16,270,0" TextWrapping="Wrap" Text="8091" VerticalAlignment="Top" MaxLines="1" MaxLength="4"/>
         <Label x:Name="label1" Content="Port:" Margin="168,13,308,0" VerticalAlignment="Top"/>
