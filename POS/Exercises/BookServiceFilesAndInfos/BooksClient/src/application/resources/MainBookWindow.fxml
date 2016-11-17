@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="787.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainBookController">
+   <left>
+      <VBox prefHeight="351.0" prefWidth="116.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnConn" mnemonicParsing="false" onAction="#onAction_btnConn" prefHeight="25.0" prefWidth="132.0" text="Conn" />
+            <Button fx:id="btngetBooks" disable="true" mnemonicParsing="false" onAction="#onAction_getBooks" prefHeight="25.0" prefWidth="151.0" text="get Books" />
+            <Button fx:id="btngetBook" disable="true" mnemonicParsing="false" onAction="#onAction_btngetBook" prefHeight="25.0" prefWidth="136.0" text="get Book" />
+            <Button fx:id="btnaddBook" disable="true" mnemonicParsing="false" onAction="#onAction_btnAdd" prefHeight="25.0" prefWidth="134.0" text="Add Book" />
+            <Button fx:id="btnupdateBook" disable="true" mnemonicParsing="false" onAction="#onAction_btnUpdate" prefHeight="25.0" prefWidth="163.0" text="Update Book" />
+            <Button fx:id="btnDelete" disable="true" mnemonicParsing="false" onAction="#onAction_btnDelete" prefHeight="25.0" prefWidth="191.0" text="Delete Book" />
+            <Button fx:id="btnDownloadImage" disable="true" mnemonicParsing="false" onAction="#onAction_downloadImage" prefHeight="25.0" prefWidth="170.0" text="Download Img" />
+            <Button fx:id="btnUploadImage" disable="true" mnemonicParsing="false" onAction="#onAction_uploadImage" prefHeight="25.0" prefWidth="175.0" text="Upload Img" />
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <Pane prefHeight="49.0" prefWidth="600.0" style="-fx-background-color: lightgrey;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="28.0" layoutY="17.0" text="URL:" />
+            <TextField fx:id="txtUrl" layoutX="115.0" layoutY="14.0" prefHeight="25.0" prefWidth="451.0" text="http://localhost:8080/BooksAPI" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <TableView fx:id="tblBooks" onMousePressed="#onClick_tblBooks" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="colId" prefWidth="44.0" text="Id" />
+                <TableColumn fx:id="colTitle" prefWidth="173.0" text="Title" />
+                  <TableColumn fx:id="colAuthor" prefWidth="124.0" text="Author" />
+                  <TableColumn fx:id="colFileName" prefWidth="136.0" text="Filename" />
+              </columns>
+            </TableView>
+         </center>
+         <top>
+            <Pane prefHeight="53.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="txtBookID" layoutX="5.0" layoutY="14.0" prefHeight="25.0" prefWidth="39.0" promptText="id" />
+                  <TextField fx:id="txtAuthor" layoutX="200.0" layoutY="14.0" prefHeight="25.0" prefWidth="159.0" promptText="book author" />
+                  <TextField fx:id="txtTitle" layoutX="48.0" layoutY="14.0" prefHeight="25.0" prefWidth="142.0" promptText="book title" />
+                  <TextField fx:id="txtFileName" layoutX="367.0" layoutY="14.0" prefHeight="25.0" prefWidth="104.0" promptText="filename" />
+               </children>
+            </Pane>
+         </top>
+      </BorderPane>
+   </center>
+   <bottom>
+      <Label fx:id="txt_message" prefHeight="26.0" prefWidth="815.0" style="-fx-background-color: yellow;" text="..." BorderPane.alignment="CENTER" />
+   </bottom>
+   <right>
+      <Pane fx:id="imagePane" onDragDropped="#onDragDropped" onDragExited="#onDragExited" onDragOver="#onDragOver" prefHeight="325.0" prefWidth="191.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="184.0" layoutX="2.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="btnChooseImg" disable="true" layoutX="2.0" layoutY="3.0" mnemonicParsing="false" onAction="#onAction_btnChooseImg" prefHeight="25.0" prefWidth="186.0" text="Choose Img" />
+            <Label disable="true" layoutX="32.0" layoutY="33.0" text="or just drop Image here" />
+            <Label fx:id="lblFileName" alignment="CENTER_RIGHT" disable="true" layoutX="7.0" layoutY="246.0" prefHeight="15.0" prefWidth="179.0" text="filename..." />
+         </children>
+      </Pane>
+   </right>
+</BorderPane>

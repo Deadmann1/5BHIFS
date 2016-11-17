@@ -1,0 +1,87 @@
+Binary File up/downloading
+
+Book Class:
+
+Add to book: string nameOfImage; + Getter,Setter
+New Webservice for Downloading/Uploading Images  
+
+
+
+BookDetail Service -> Einzelene Bücher
+BookList Service -> Collection
+
+@GET
+@Produces({MediaType.Application_XML, Mediatype.Application.APPLICATION_JSON})
+BookDetail
+public Book getBook(@PathParam("bookid") String id) { //id as string to get no expcetion while parsing 
+	
+	Database db = Database.Instance();
+	Book retBook;
+	try {
+		retBook = db.getBook(Integer.parseInt(id));d
+	}
+	catch(Exception ex) {
+		retBook = new Book(-99,e.getMessage(), "-x-x-x-", "No book found with id:17");
+	}
+	return retBook;
+}
+
+@PUT
+@Consumes({MediaType.TEXT_HTML, MediaType.TEXT_XML})
+public String update(Book book) throws IOException {
+	String retValue = "ok";
+	Database db = Database.newInstance();
+	try {
+		Book _book = db.getBook(book.getId());
+		_book.setAuthor(book.getAuthor());
+		_book.setTitle(book.getTitle());
+	}
+	catch(Exception e) {
+		retValue e= "error: " + e.getMessage();
+	}
+	return retValue;
+}
+
+
+Package Controller in Book Client !
+
+WebResource service;
+
+public Book updateBook(Book book) throws Exception {
+	Book retBook = null;
+	retBook = service.path("BookDetail/" + strId).type(MediaType.TEXT_XML).put(Srting.class, book);
+	return retBook;
+}
+
+
+public void setUri(String uri) throws Exception {
+	this.uri = uri;
+	config = new DefaultClientConfig();
+	//config.getClasses().add(MultiPartWriter.class);  Used for Pictures
+	
+	client = client.created(config)
+	service = client.resource(getBaseURI());
+	
+}
+
+public getBaseURI() {
+	return Uribuilder.fromUri(uri).build;
+}
+
+public Book getBook(int _id) throws Exception {
+	Book retBook = null;
+	String strId = new Integer(_id).toString();
+	
+	retBook = service.path("BookDetail/" + strId).accept(MediaType.TEXT_XML).get(Book.class);
+	return retBook;
+	
+	
+}
+
+public String addBook(Book book) throws Exception {
+	String retValue = null;
+	retValue = service.path("BookDetail/").type(MediaType.TEXT_XML).post(String.class,book);
+	return retValue;
+}
+
+
