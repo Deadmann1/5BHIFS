@@ -17,5 +17,7 @@ namespace _02_GIS.Models
             MitarbeiterNr = mitarbeiterNr;
             Datum = datum;
         }
+
+
     }
 }

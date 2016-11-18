@@ -1,0 +1,32 @@
+﻿<Window x:Class="_02_GIS.CoordPicker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_02_GIS"
+        mc:Ignorable="d"
+        Title="Bitte wählen sie 3 Koordinaten!" Height="161" Width="258" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,-1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="451*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnSuchradiusLaden" Content="Suchradius laden" Margin="14,75,17,10" Click="btnSuchradiusLaden_Click"/>
+        <Label x:Name="label" Content="X&#xD;&#xA;" HorizontalAlignment="Left" Margin="14,10,0,0" VerticalAlignment="Top" Height="27"/>
+        <TextBox x:Name="txtX" HorizontalAlignment="Left" Height="23" Margin="31,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" Text="0"/>
+        <Label x:Name="label1" Content="Y" HorizontalAlignment="Left" Margin="140,10,0,0" VerticalAlignment="Top" Height="27"/>
+        <TextBox x:Name="txtY" HorizontalAlignment="Left" Height="23" Margin="175,15,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.034"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label x:Name="label3" Content="Radius" HorizontalAlignment="Left" Margin="31,44,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtRadius" HorizontalAlignment="Left" Height="23" Margin="91,47,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="143"/>
+
+    </Grid>
+</Window>

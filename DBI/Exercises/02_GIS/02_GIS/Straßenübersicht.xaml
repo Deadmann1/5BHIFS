@@ -1,0 +1,44 @@
+﻿<Window x:Class="_02_GIS.Straßenübersicht"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_02_GIS"
+        mc:Ignorable="d"
+        Title="Straßenübersicht" Height="592" Width="918.98">
+    <Grid>
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="791*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Margin="10,0" RenderTransformOrigin="0.5,0.5" Background="#FFD17175" Orientation="Horizontal">
+                <Button x:Name="btnLoadStraßennetz" Content="Lade Straßennetz" Width="180" Margin="10,0,0,0" FontSize="16" Click="btnLoadStraßennetz_Click"/>
+                <Button x:Name="btnLadenOhneAuftrag" Content="Lade Teilstrecken ohne Räumungsauftrag" Margin="10,0,0,0" FontSize="16" Width="340" Click="btnLadenOhneAuftrag_Click"/>
+                <Button x:Name="btnLadenInRadius" Content="Zeige Mitarbeiter in bestimmten Radius" FontSize="16" Width="315" Click="btnLadenInRadius_Click" Margin="10,0,0,0"/>
+            </StackPanel>
+            <Grid Margin="10" Grid.Row="1" Background="#FF9C9A9A">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="525*"/>
+                    <ColumnDefinition Width="346*"/>
+                </Grid.ColumnDefinitions>
+                <Canvas x:Name="canvas" Margin="10"/>
+                <Grid Grid.Column="1" Margin="10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="365*"/>
+                        <RowDefinition Height="361*"/>
+                    </Grid.RowDefinitions>
+                    <DockPanel Margin="10" Grid.Row="1">
+                        <Label x:Name="label" Content="Teilstrecken ohne Räumungsauftrag" VerticalAlignment="Top" DockPanel.Dock="Top" FontSize="20" Margin="10,0"/>
+                        <DataGrid x:Name="dataGridTeilstrecken" Margin="0,0,0,10" DockPanel.Dock="Bottom"/>
+                    </DockPanel>
+                    <DockPanel Margin="10">
+                        <Label x:Name="label1" Content="Mitarbeiter im Radius" VerticalAlignment="Top" DockPanel.Dock="Top" FontSize="20" Margin="10,0"/>
+                        <DataGrid x:Name="dataGridMitarbeiter" RenderTransformOrigin="0.5,0.5" DockPanel.Dock="Bottom" Height="136" Margin="0,0,10,0"/>
+                    </DockPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>

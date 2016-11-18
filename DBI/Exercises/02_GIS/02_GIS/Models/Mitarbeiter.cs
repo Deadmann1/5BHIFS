@@ -8,59 +8,22 @@ namespace _02_GIS.Models
 {
     class Mitarbeiter
     {
-        private int mirarbeiterNr;
-        private string mitarbeiterName;
-        private int arbeitspensum;
+        public int MitarbeiterNr { get; set; }
 
-       
+        public string MitarbeiterName { get; set; }
 
-        public int MirarbeiterNr
-        {
-            get
-            {
-                return mirarbeiterNr;
-            }
+        public int Arbeitspensum { get; set; }
 
-            set
-            {
-                mirarbeiterNr = value;
-            }
-        }
-
-        public string MitarbeiterName
-        {
-            get
-            {
-                return mitarbeiterName;
-            }
-
-            set
-            {
-                mitarbeiterName = value;
-            }
-        }
-        public int Arbeitspensum
-        {
-            get
-            {
-                return arbeitspensum;
-            }
-
-            set
-            {
-                arbeitspensum = value;
-            }
-        }
         public Mitarbeiter(int maNr, string maName, int ap)
         {
-            mirarbeiterNr = maNr;
-            mitarbeiterName = maName;
-            arbeitspensum = ap;
+            MitarbeiterNr = maNr;
+            MitarbeiterName = maName;
+            Arbeitspensum = ap;
         }
 
         public override string ToString()
         {
-            return $"{nameof(Arbeitspensum)}: {Arbeitspensum}, {nameof(MirarbeiterNr)}: {MirarbeiterNr}, {nameof(MitarbeiterName)}: {MitarbeiterName}";
+            return $"{nameof(Arbeitspensum)}: {Arbeitspensum}, {nameof(MitarbeiterNr)}: {MitarbeiterNr}, {nameof(MitarbeiterName)}: {MitarbeiterName}";
         }
     }
 }

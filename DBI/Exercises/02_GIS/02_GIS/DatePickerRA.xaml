@@ -1,0 +1,18 @@
+﻿<Window x:Class="_02_GIS.DatePickerRA"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_02_GIS"
+        mc:Ignorable="d"
+        Title="Bitte wählen Sie ein Datum!" Height="119.346" Width="254.224" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="451*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DatePicker x:Name="dateAuftrag" Margin="10,10,16.678,0" VerticalAlignment="Top" RenderTransformOrigin="-0.207,0.331"/>
+        <Button x:Name="btnAuftragErstellen" Content="Auftrag erstellen" Margin="14,50,16.678,10" Click="btnAuftragErstellen_Click"/>
+
+    </Grid>
+</Window>

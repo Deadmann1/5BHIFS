@@ -91,14 +91,34 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Data\Database.cs" />
+    <Compile Include="CoordPicker.xaml.cs">
+      <DependentUpon>CoordPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DatePickerRA.xaml.cs">
+      <DependentUpon>DatePickerRA.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\Einsatzzuordnung.cs" />
     <Compile Include="Models\Mitarbeiter.cs" />
+    <Compile Include="Models\MitarbeiterImUmfeld.cs" />
     <Compile Include="Models\Räumungsabschnitt.cs" />
     <Compile Include="Models\Räumungsauftrag.cs" />
-    <Compile Include="Models\Strassennetz.cs" />
+    <Compile Include="Models\Schneestraße.cs" />
     <Compile Include="Models\Straßenteilstrecke.cs" />
+    <Compile Include="Threads\SchneefallAlarm.cs" />
+    <Compile Include="Straßenübersicht.xaml.cs">
+      <DependentUpon>Straßenübersicht.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Coords.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Page Include="CoordPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DatePickerRA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -111,6 +131,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Straßenübersicht.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
