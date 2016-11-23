@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pkgServices;
 
 import java.util.TreeSet;
@@ -72,7 +67,7 @@ public class BookService {
     @PUT
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_XML)
-    public void putBook(@PathParam("id") int _id,Book b) {
+    public void updateBook(@PathParam("id") int _id,Book b) {
         try{
             Database.getInstance().setBook(b);
         }
