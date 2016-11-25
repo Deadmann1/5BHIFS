@@ -1,0 +1,14 @@
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\EinAus\bin\Debug\EinAus.exe.config
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\EinAus\bin\Debug\EinAus.exe
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\EinAus\bin\Debug\EinAus.pdb
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\EinAus\obj\Debug\EinAus.csprojResolveAssemblyReference.cache
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\EinAus\obj\Debug\MainWindow.g.cs
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\EinAus\obj\Debug\App.g.cs
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\EinAus\obj\Debug\EinAus_MarkupCompile.cache
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\EinAus\obj\Debug\EinAus_MarkupCompile.lref
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\EinAus\obj\Debug\MainWindow.baml
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\EinAus\obj\Debug\EinAus.g.resources
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\EinAus\obj\Debug\EinAus.Properties.Resources.resources
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\EinAus\obj\Debug\EinAus.csproj.GenerateResource.Cache
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\EinAus\obj\Debug\EinAus.exe
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\EinAus\obj\Debug\EinAus.pdb

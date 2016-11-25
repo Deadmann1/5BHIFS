@@ -28,8 +28,8 @@ namespace _02_GIS.Data
         public List<string> ConnectionsAddresses;
         public List<Schneestraße> Schneestraßen;
         public List<MitarbeiterImUmfeld> MitarbeiterImUmfeld = new List<MitarbeiterImUmfeld>();
-        public List<Räumungsabschnitt> teilstreckeOhneAuftrag = new List<Räumungsabschnitt>();
-        public List<Straßenteilstrecke> überabschnitte = new List<Straßenteilstrecke>();
+        public List<Räumungsabschnitt> TeilstreckenOhneAuftrag = new List<Räumungsabschnitt>();
+        public List<Straßenteilstrecke> Abschnitte = new List<Straßenteilstrecke>();
         public Dictionary<String, Coords> Koordinaten;
         #endregion
 
@@ -37,7 +37,7 @@ namespace _02_GIS.Data
 
         private Database()
         {
-            ConnectionsAddresses = new List<string>() { "212.152.179.117", "192.168.128.151" };
+            ConnectionsAddresses = new List<string>() { "212.152.179.117", "192.168.128.152" };
         }
 
         public static Database Instance => instance ?? (instance = new Database());
@@ -361,7 +361,7 @@ namespace _02_GIS.Data
                     {
                         using (DbDataReader reader = cmd.ExecuteReader())
                         {
-                            teilstreckeOhneAuftrag.Clear();
+                            TeilstreckenOhneAuftrag.Clear();
                             while (reader.Read())
                             {
                                 string aid = reader.GetString(0);
@@ -381,7 +381,7 @@ namespace _02_GIS.Data
                                 Räumungsabschnitt t = new Räumungsabschnitt(aid, abschnitt, km);
                                 Console.WriteLine(t);
                                 bool outcome = false;
-                                foreach (Räumungsabschnitt t1 in teilstreckeOhneAuftrag)
+                                foreach (Räumungsabschnitt t1 in TeilstreckenOhneAuftrag)
                                 {
                                     if (t1.AId.Equals(t.AId))
                                     {
@@ -392,7 +392,7 @@ namespace _02_GIS.Data
 
                                 if (!outcome)
                                 {
-                                    teilstreckeOhneAuftrag.Add(t);
+                                    TeilstreckenOhneAuftrag.Add(t);
                                 }
                             }
 

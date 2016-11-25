@@ -95,7 +95,7 @@ namespace _02_GIS
             }
 
             dataGridTeilstrecken.ItemsSource = null;
-            dataGridTeilstrecken.ItemsSource = Database.Instance.teilstreckeOhneAuftrag;
+            dataGridTeilstrecken.ItemsSource = Database.Instance.TeilstreckenOhneAuftrag;
         }
 
         private async void btnLoadStraßennetz_Click(object sender, RoutedEventArgs e)
