@@ -1,5 +1,7 @@
 package pkgServices;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 import javax.ws.rs.core.Application;
 
@@ -17,15 +19,18 @@ public class ApplicationConfig extends Application {
         return resources;
     }
 
-    /**
-     * Do not modify addRestResourceClasses() method.
-     * It is automatically populated with
-     * all resources defined in the project.
-     * If required, comment out calling this method in getClasses().
-     */
+
+    @Override
+    public Map<String, Object> getProperties() {
+        Map<String, Object> props = new HashMap<>();
+        props.put("jersey.config.server.provider.classnames",
+                "org.glassfish.jersey.media.multipart.MultiPartFeature");
+        return props;
+    }
+
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(pkgServices.BookService.class);
         resources.add(pkgServices.ReaderService.class);
     }
-    
+
 }

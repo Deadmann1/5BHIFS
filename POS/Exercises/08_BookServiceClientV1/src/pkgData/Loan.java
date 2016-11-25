@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import javax.xml.bind.annotation.XmlElement;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import pkgService.RestService;
 
 @XmlRootElement
 public class Loan implements Serializable, Comparable{
@@ -68,7 +69,7 @@ public class Loan implements Serializable, Comparable{
             Logger.getLogger(Loan.class.getName()).log(Level.SEVERE, null, ex);
         }
 */
-        return "Loan[" + date + ", reader=" ;
+        return "Loan[" + date + ", " + RestService.getInstance().getReader(idReader).toString() +", "+ RestService.getInstance().getBook(idBook).toString();
     }
     
 }

@@ -1,14 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg08_bookserviceclientv1.MainGUIController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="521.0" prefWidth="795.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg08_bookserviceclientv1.MainGUIController">
+   <children>
+      <BorderPane layoutX="5.0" layoutY="3.0" prefHeight="515.0" prefWidth="786.0">
+         <top>
+            <Pane prefHeight="40.0" prefWidth="750.0" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="14.0" layoutY="12.0" text="Webservice-URL:" />
+                  <TextField fx:id="txtUrl" layoutX="134.0" layoutY="7.0" prefHeight="26.0" prefWidth="606.0" />
+               </children>
+               <BorderPane.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </Pane>
+         </top>
+         <left>
+            <Pane maxHeight="-Infinity" prefHeight="449.0" prefWidth="133.0" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" top="10.0" />
+               </BorderPane.margin>
+               <children>
+                  <VBox layoutY="9.0" prefHeight="312.0" prefWidth="132.0" spacing="5.0">
+                     <children>
+                        <Button fx:id="btnConnect" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OnBtnConnectClicked" prefHeight="26.0" prefWidth="124.0" text="Connect" />
+                        <Button fx:id="btnGetBook" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OnBtnGetBookClicked" prefHeight="26.0" prefWidth="133.0" text="Get Book" />
+                        <Button fx:id="btnGetAllBooks" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OnBtnGetAllBooksClicked" prefHeight="26.0" prefWidth="134.0" text="Get All Books" />
+                        <Button fx:id="btnAddBook" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OnBtnAddBookClicked" prefHeight="26.0" prefWidth="135.0" text="Add Book" />
+                        <Button fx:id="btnUpdateBook" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OnBtnUpdateBookClicked" prefHeight="26.0" prefWidth="123.0" text="Update Book" />
+                        <Button fx:id="btnDeleteBook" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OnBtnDeleteBookClicked" prefHeight="26.0" prefWidth="156.0" text="Delete Book" />
+                        <Button fx:id="btnUploadImage" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OnBtnUploadImageClicked" prefHeight="26.0" prefWidth="129.0" text="Upload Image" />
+                        <Button fx:id="btnDownloadImage" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OnBtnDownloadImageClicked" prefHeight="26.0" prefWidth="135.0" text="Download Image" />
+                        <Button fx:id="btnFillReader" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OnBtnFillReaderClicked" prefHeight="26.0" prefWidth="136.0" text="Fill Reader" />
+                        <Button fx:id="btnAddLoan" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#OnBtnAddLoanClicked" prefHeight="26.0" prefWidth="124.0" text="Add Loan" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
+                  </VBox>
+                  <Button fx:id="btnLoadLoans" layoutY="321.0" mnemonicParsing="false" onAction="#OnBtnLoadLoansClicked" prefHeight="25.0" prefWidth="132.0" text="Load Loans" />
+               </children>
+            </Pane>
+         </left>
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="txtId" layoutX="6.0" layoutY="14.0" prefHeight="25.0" prefWidth="143.0" promptText="id" />
+                  <TextField fx:id="txtTitle" layoutX="157.0" layoutY="14.0" prefHeight="25.0" prefWidth="136.0" promptText="title" />
+                  <TextField fx:id="txtAuthor" layoutX="306.0" layoutY="14.0" prefHeight="25.0" prefWidth="137.0" promptText="author" />
+                  <TextField fx:id="txtImageName" layoutX="453.0" layoutY="14.0" prefHeight="25.0" prefWidth="146.0" promptText="imageName" />
+                  <TableView fx:id="tblBook" layoutX="5.0" layoutY="53.0" prefHeight="200.0" prefWidth="444.0">
+                    <columns>
+                      <TableColumn fx:id="tblColID" prefWidth="52.0" text="ID" />
+                      <TableColumn fx:id="tblColTitle" prefWidth="196.0" text="TITLE" />
+                        <TableColumn fx:id="tblColAuthor" prefWidth="195.0" text="AUTHOR(S)" />
+                    </columns>
+                  </TableView>
+                  <ImageView fx:id="image" fitHeight="200.0" fitWidth="196.0" layoutX="452.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
+                  <ComboBox fx:id="cmbReader" layoutX="61.0" layoutY="267.0" prefHeight="25.0" prefWidth="386.0" />
+                  <Label layoutX="6.0" layoutY="271.0" prefHeight="17.0" prefWidth="47.0" text="Reader:" />
+                  <Label layoutX="5.0" layoutY="310.0" prefHeight="17.0" prefWidth="43.0" text="Date:" />
+                  <TextField fx:id="txtDate" layoutX="61.0" layoutY="306.0" prefHeight="25.0" prefWidth="247.0" />
+                  <ListView fx:id="lvLoans" layoutX="14.0" layoutY="343.0" prefHeight="103.0" prefWidth="585.0" />
+               </children>
+            </Pane>
+         </center>
+         <bottom>
+            <Pane prefHeight="18.0" prefWidth="750.0" style="-fx-background-color: orange;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lblMessage" layoutX="3.0" layoutY="1.0" prefHeight="17.0" prefWidth="742.0" text="Label" />
+               </children>
+            </Pane>
+         </bottom>
+      </BorderPane>
+   </children>
 </AnchorPane>
