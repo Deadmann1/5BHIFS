@@ -1,11 +1,10 @@
-package pkgModel;
+package pkgModels;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
 
 @XmlRootElement
-
-public class Book {
+public class Book implements Comparable{
 	
 	private String title;
 	
@@ -64,7 +63,45 @@ public class Book {
 		return "Book [title=" + title + ", id=" + id + ", author=" + author
 				+ ", fileName=" + fileName + "]";
 	}
-	
-	
+
+    @Override
+    public int compareTo(Object o) {
+        int retVal;
+        Book b = (Book)o;
+        if(this.id == b.id) {
+            retVal = 0;
+        }
+        else {
+            retVal = this.title.compareTo(b.title);
+        }
+        return retVal;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + this.id;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Book other = (Book) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 	
 }
