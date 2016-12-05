@@ -54,7 +54,7 @@
                         <Insets bottom="5.0" />
                      </padding>
                   </VBox>
-                  <Button fx:id="btnLoadLoans" layoutY="321.0" mnemonicParsing="false" onAction="#OnBtnLoadLoansClicked" prefHeight="25.0" prefWidth="132.0" text="Load Loans" />
+                  <Button fx:id="btnLoadLoans" layoutY="369.0" mnemonicParsing="false" onAction="#OnBtnLoadLoansClicked" prefHeight="25.0" prefWidth="132.0" text="Load Loans" />
                </children>
             </Pane>
          </left>
