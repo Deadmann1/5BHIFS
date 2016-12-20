@@ -1,0 +1,5 @@
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\MedianFilterV2\MedianFilterV2_Shared\bin\Debug\MedianFilterV2_Shared.dll
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\MedianFilterV2\MedianFilterV2_Shared\bin\Debug\MedianFilterV2_Shared.pdb
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\MedianFilterV2\MedianFilterV2_Shared\obj\Debug\MedianFilterV2_Shared.dll
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\MedianFilterV2\MedianFilterV2_Shared\obj\Debug\MedianFilterV2_Shared.pdb
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\MedianFilterV2\MedianFilterV2_Shared\obj\Debug\MedianFilterV2_Shared.csprojResolveAssemblyReference.cache

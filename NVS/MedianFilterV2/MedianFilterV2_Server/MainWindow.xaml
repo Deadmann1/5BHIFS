@@ -3,10 +3,69 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MedianFilterV2_Server"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="MedianFilterV2_Server_Sammer" Height="427" Width="564" MinWidth="564" MinHeight="427" Icon="icon_filter.ico">
+    <Grid Margin="0,0,2,2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="56*"/>
+            <RowDefinition Height="141*"/>
+        </Grid.RowDefinitions>
+        <DockPanel LastChildFill="False" Margin="0,0,-6,0">
+            <Menu x:Name="menu" Height="20" VerticalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,10,0">
+                <MenuItem Header="File" Width="37" Margin="7,0,0,0">
+                    <MenuItem x:Name="MenuItemLoad" Header="Load" HorizontalAlignment="Left" Width="140" Click="MenuItemLoad_Click"/>
+                    <MenuItem x:Name="MenuItemSave" Header="Save" HorizontalAlignment="Left" Width="140" Click="MenuItemSave_Click"/>
+                    <MenuItem x:Name="MenuItemExit" Header="Exit" HorizontalAlignment="Left" Width="140" Click="MenuItemExit_Click"/>
+                </MenuItem>
+                <MenuItem Header="Info" Width="37" Margin="7,0,0,0">
+                    <MenuItem x:Name="MenuItemLocalAddress" Header="Local-IP" HorizontalAlignment="Left" Width="140" Click="MenuItemLocalAddress_OnClick"/>
+                    <MenuItem x:Name="MenuItemGlobalAddress" Header="Global-IP" HorizontalAlignment="Left" Width="140" Click="MenuItemGlobalAddress_OnClick"/>
+                </MenuItem>
+            </Menu>
+
+            <Grid VerticalAlignment="Top" DockPanel.Dock="Top" Margin="0,0,3,0" Height="92">
+                <ComboBox x:Name="comboBoxFilter" HorizontalAlignment="Left" Margin="10,28,0,45" Width="120" SelectionChanged="comboBoxFilter_SelectionChanged"/>
+                <Label x:Name="lblFilter" Content="Filter:" VerticalAlignment="Top" Height="34" Margin="10,0,456,0"/>
+                <Button x:Name="btnFilter" Content="Filter" HorizontalAlignment="Left" Margin="135,28,0,0" Width="75" Click="btnFilter_Click" Height="19" VerticalAlignment="Top" IsEnabled="False"/>
+                <ProgressBar x:Name="progessBar" Height="19" VerticalAlignment="Top" Margin="215,28,10,0"/>
+                <TextBox x:Name="txtPort" TextWrapping="Wrap" Margin="45,57,0,17" HorizontalAlignment="Left" Width="113"/>
+                <TextBox x:Name="txtSize" HorizontalAlignment="Left" Height="20" Margin="215,3,0,0" VerticalAlignment="Top" Width="35" MaxLength="2" PreviewTextInput="NumberValidationTextBox"/>
+                <Label x:Name="lblSize" Content="Median Size:" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="24" Width="80"/>
+                <Label x:Name="lblTime" Height="23" Margin="260,0,28,0" VerticalAlignment="Top"/>
+                <Label x:Name="label" Content="Port:&#xD;&#xA;" Margin="5,52,512,17" RenderTransformOrigin="0.433,0.565"/>
+                <Button x:Name="btnStart" Content="Start" Margin="182,55,0,17" HorizontalAlignment="Left" Width="68" Click="btnStart_Click"/>
+                <Button x:Name="btnStop" Content="Stop" Margin="272,55,0,17" HorizontalAlignment="Left" Width="72" Click="btnStop_Click"/>
+            </Grid>
+        </DockPanel>
+        <Grid Margin="0" Grid.Row="1">
+            <Grid Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="57*"/>
+                    <RowDefinition Height="31*"/>
+                </Grid.RowDefinitions>
+                <Grid Margin="0,0,0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="257*"/>
+                        <ColumnDefinition Width="258*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="imageBefore" Margin="0"/>
+                    <Image x:Name="imageAfter" Grid.Column="1" Margin="0"/>
+                </Grid>
+                <Grid Margin="0" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26*"/>
+                        <RowDefinition Height="67*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120*"/>
+                        <ColumnDefinition Width="157*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label  Content="Clients:" Margin="5,0,0,0"/>
+                    <ListBox x:Name="lbClients" Margin="10,5,10,10" Grid.Row="1"/>
+                    <ListBox x:Name="lbMessages" Margin="10,5,10,10" Grid.Column="1" Grid.Row="1"/>
+                    <Label  Content="History:" Grid.Column="1" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="26" Width="50"/>
+                </Grid>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
