@@ -1,0 +1,31 @@
+create or replace procedure markup_docs (suchstr varchar2)
+as
+  qid number;
+  lobMarkup CLOB;	--Character Large Object
+  title varchar2(200);
+begin
+  qid := 1;
+  -- mark all scores
+  for c_rec in (select score(1) score, docid, doctitle
+                from docs2
+                where contains(docfile, suchstr, 1) > 0
+                order by score(1) desc)
+  loop
+
+    dbms_output.put_line('-----VOR--------');
+
+    dbms_output.put_line('score ' || c_rec.score || 
+                         ' id ' || c_rec.docid || 
+                         ' qid ' || qid);
+
+	
+	CTX_DOC.MARKUP('idx_docs',to_char(c_rec.docid),suchstr,lobMarkup,
+				starttag=>'<I><FONT COLOR=RED>',endtag=>'</FONT></I>');
+
+	-- insert
+	insert into docsresult values (c_rec.docid, c_rec.doctitle, lobMarkup);
+    dbms_output.put_line('-----NACH--------');
+
+    qid := qid + 1;
+  end loop;
+end markup_docs;

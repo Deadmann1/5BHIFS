@@ -1,0 +1,112 @@
+<html><body><p/>
+<div align="right"><font face="Verdana" size="1">1</font></div>
+<p /><font face="Arial" size="6" color="#006666"><b><I><FONT COLOR=RED>XML</FONT></I></b> - </font><font face="Arial" size="5" color="#006666">Extensible Markup Language</font>
+<p /><div align="right"><font face="Verdana" size="1">2</font></div>
+<p /><font face="Arial" size="5" color="#006666">Allgemeines</font>
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">1996 von einer Arbeitsgruppe des W3C entwickelt </font></li><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">ist ein freier Standard</font></li><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">Einsatzgebiete:</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Speicherformat in Applikationen </font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4"><I><FONT COLOR=RED>XML</FONT></I> als Format um Informationen auszutauschen </font></li></ul>
+<p /><div align="right"><font face="Verdana" size="1">3</font></div>
+<p /><font face="Arial" size="5" color="#006666"><I><FONT COLOR=RED>XML</FONT></I> – Dokumente        (1)</font>
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">Prolog und Dokumenttyp-Deklaration</font></li><font face="Wingdings" size="2" color="#99cccc"><li></font><font face="Verdana" size="4">Versionsnummer, </font></li><font face="Wingdings" size="2" color="#99cccc"><li></font><font face="Verdana" size="4">externe oder interne Dokumenttyp-Deklaration, wird festgelegt</font></li></ul>
+<p /><font face="Verdana" size="1">		</font><font face="Verdana" size="2" color="#006666">&lt;?xml version=&quot;1.0&quot;?&gt;</font>
+<p /><font face="Verdana" size="2" color="#006666">		&lt;!DOCTYPE gruss SYSTEM &quot;hallo.dtd&quot;&gt;</font>
+<p /><font face="Verdana" size="2" color="#006666">		&lt;gruss&gt;Hallo Welt!&lt;/gruss&gt;</font>
+<p /><div align="right"><font face="Verdana" size="1">4</font></div>
+<p /><font face="Arial" size="5" color="#006666"><I><FONT COLOR=RED>XML</FONT></I> – Dokumente        (2)</font>
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">„wellformed“</font></li></ul>
+<p /><font face="Verdana" size="4">  entspricht einem syntaktisch korrekten <I><FONT COLOR=RED>XML</FONT></I>-Dokument.zB.</font>
+<p /><ul><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="3">die <I><FONT COLOR=RED>XML</FONT></I>-Version sollte deklariert sein</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="3">Jedes Start-Tag muss mit einem End-Tag abgeschlossen werden</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="3">ein Attribut darf nicht zweimal im gleichen Tag vorkommen</font><font face="Verdana" size="2"> </font></li></ul>
+<p /><div align="right"><font face="Verdana" size="1">5</font></div>
+<p /><font face="Arial" size="5" color="#006666"><I><FONT COLOR=RED>XML</FONT></I> – Dokumente        (3)</font>
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4"> „</font><font face="Verdana" size="4">valid“ (gültig)</font></li></ul>
+<p /><font face="Verdana" size="4">	das Dokument besitzt eine DTD und hält sich an die darin </font><font face="Verdana" size="4">formulierten Beschränkungen</font>
+<p /><div align="right"><font face="Verdana" size="1">6</font></div>
+<p /><font face="Arial" size="5" color="#006666"><I><FONT COLOR=RED>XML</FONT></I> – Dokumente        (4)</font>
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">Dokument Typ Declaration (DTD)</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Enthält Markup Deklarationen</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Ist eine Reihe von Element-, Attributs- und Entity-Deklarationen</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Legt die Syntax eines <I><FONT COLOR=RED>XML</FONT></I>-Dokumentes fest</font></li></ul>
+<p /><div align="right"><font face="Verdana" size="1">7</font></div>
+<p /><font face="Arial" size="5" color="#006666">Logische Strukturen       (1)</font>
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">Elemente</font></li></ul>
+<p /><font face="Verdana" size="2" color="#006666"><b>&lt;!ELEMENT Elementname Content-specification&gt;</b></font>
+<p />
+<p /><ul><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Elementname = Elementtyp </font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Müssen mit einem Buchstaben oder einem Unterstrich beginnen</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Dürfen nicht mit den Buchstaben <I><FONT COLOR=RED>XML</FONT></I> beginnen</font></li></ul>
+<p /><div align="right"><font face="Verdana" size="1">8</font></div>
+<p /><font face="Arial" size="5" color="#006666">Logische Strukturen       (1)</font>
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">Content Specification</font></li></ul>
+<p /><font face="Verdana" size="2" color="#006666"><b>&lt;!ELEMENT Elementname Content-specification&gt;</b></font>
+<p />
+<p /><font face="Verdana" size="4">Dabei unterscheidet man:</font>
+<p /><ul><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Element Content</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Mixed Content </font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">ANY</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">EMPTY</font></li></ul>
+<p /><div align="right"><font face="Verdana" size="1">9</font></div>
+<p /><font face="Arial" size="5" color="#006666">Beispiel Element</font>
+<p />
+<p /><font face="Verdana" size="2">&lt;!ELEMENT Kapitel (KapTitel, (Para | Zwischentit)+) &gt; </font>
+<p /></u>
+<p /><font face="Verdana" size="3"><u>Erklärung:</font>
+<p /><font face="Verdana" size="3"></u>&lt;!ELEMENT = es folgt eine element declaration</font>
+<p /><font face="Verdana" size="3">Kapitel = Name des Elementes</font>
+<p /><font face="Verdana" size="3">( ) = Unterelemente</font>
+<p /><font face="Verdana" size="3">,  = darauf folgend</font>
+<p /><font face="Verdana" size="3">|  = oder</font>
+<p /><font face="Verdana" size="3">+ = eines oder mehrere [2]</font>
+<p /><div align="right"><font face="Verdana" size="1">10</font></div>
+<p /><font face="Arial" size="5" color="#006666">Logische Strukturen       (2)</font>
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">Attribute </font></li></ul>
+<p /><font face="Verdana" size="1"><b>&lt;!ELEMENT Elementname (Inhalt)&gt;</b></font>
+<p /><font face="Verdana" size="1">&lt;!ATTLIST Elementname</font>
+<p /><font face="Verdana" size="1">Attributname_1 Attributtype [#REQUIRED|#IMPLIED|#FIXED &quot;Wert&quot;|Defaultwert]</font>
+<p /><font face="Verdana" size="1">&gt; </font>
+<p /><div align="right"><font face="Verdana" size="1">11</font></div>
+<p /><font face="Arial" size="5" color="#006666">Logische Strukturen       (3)</font>
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">Attributtyp</font></li></ul>
+<p /><font face="Verdana" size="4">	Dabei unterscheidet man:</font>
+<p /><ul><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">CDATA</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">ENTITY </font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">ENTITIES </font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">ID</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">IDREF / IDREFS </font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">NMTOKEN / NMTOKENS </font></li></ul>
+<p /><div align="right"><font face="Verdana" size="1">12</font></div>
+<p /><font face="Arial" size="5" color="#006666">Logische Strukturen       (4)</font>
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">Entities</font></li></ul>
+<p /><font face="Verdana" size="4">	kann folgende Funktionen haben: </font>
+<p /><ul><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Ersetzung eines Strings durch einen anderen String</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Verknüpfung mit einem anderen <I><FONT COLOR=RED>XML</FONT></I>-File </font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Platzhalter für Graphik oder andere Nicht-<I><FONT COLOR=RED>XML</FONT></I>-Daten, die eingefügt werden</font></li></ul>
+<p /><div align="right"><font face="Verdana" size="1">13</font></div>
+<p /><font face="Arial" size="5" color="#006666">Logische Strukturen       (5)</font>
+<p /><div align="center"><blockquote><font face="Verdana" size="3" color="#006666"><b>&lt;!ENTITY 5BDT „PRE, PR, ADAT&quot;&gt;</font><font face="Verdana" size="4"></b> </font></div>
+<p />
+<p /><font face="Verdana" size="4">Unterteilt in:</font>
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">General Entities</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Parsed</font></li><font face="Wingdings" size="1" color="#006666"><li></font><font face="Verdana" size="2">Internal</font></li><font face="Wingdings" size="1" color="#006666"><li></font><font face="Verdana" size="2">external</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Unparsed</font></li><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">Parameter Entities</font></li></ul>
+<p /><font face="Verdana" size="4">	</font><font face="Verdana" size="3">durch %entity_name in der DTD verwendet</font><font face="Verdana" size="4"> </font>
+<p /><div align="right"><font face="Verdana" size="1">14</font></div>
+<p /><font face="Arial" size="5" color="#006666">Parser                             (1)</font>
+<p /><font face="Verdana" size="4">Lassen sich unterscheiden:</font>
+<p />
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">Validierende Parser</font></li></ul>
+<p /><font face="Verdana" size="4">	überprüft ob das <I><FONT COLOR=RED>XML</FONT></I> seiner DTD gehorcht (valid)</font>
+<p />
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">Nicht-Validierende Parser</font></li></ul>
+<p /><font face="Verdana" size="4">	überprüft ob es der <I><FONT COLOR=RED>XML</FONT></I> Syntax folgt (wellformed)</font>
+<p /><div align="right"><font face="Verdana" size="1">15</font></div>
+<p /><font face="Arial" size="5" color="#006666">Parser                             (2) </font>
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">SAX</font></li><font face="Wingdings" size="2" color="#99cccc"><li></font><font face="Verdana" size="4">arbeitet &quot;event based„</font></li><font face="Wingdings" size="2" color="#99cccc"><li></font><font face="Verdana" size="4">Ereignisse können durch Eventhandler behandelt werden  </font></li><font face="Wingdings" size="2" color="#99cccc"><li></font><font face="Verdana" size="4">SAX-API definiert mehrere Eventhandler</font></li><font face="Wingdings" size="1" color="#006666"><li></font><font face="Verdana" size="2">Document Handler</font></li><font face="Wingdings" size="1" color="#006666"><li></font><font face="Verdana" size="2">Error Handler</font></li></ul>
+<p /><div align="right"><font face="Verdana" size="1">16</font></div>
+<p /><font face="Arial" size="5" color="#006666">Parser                             (3)</font>
+<p />
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">Vorteile SAX</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Hohe Geschwindigkeit</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Große Datenmengen können verarbeitet werden</font></li></ul>
+<p /><div align="right"><font face="Verdana" size="1">17</font></div>
+<p /><font face="Arial" size="5" color="#006666">Parser                             (4)</font>
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">DOM (Document Object Model)</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Daten werden als Document Object abgespeichert (DOM-Tree)</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Definiert mehrere Interfaces</font></li></ul>
+<p /><font face="Verdana" size="4">	-&gt; Node ist das wichtigste, davon sind 	   alle anderen abgeleitet </font>
+<p /><div align="right"><font face="Verdana" size="1">18</font></div>
+<p /><font face="Arial" size="5" color="#006666">Parser                             (5)</font>
+<p /><div align="right"><font face="Verdana" size="1">19</font></div>
+<p /><font face="Arial" size="5" color="#006666">Parser                             (6)</font>
+<p /><ul><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">Vorteile DOM</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Einfache Navigation im Document Object</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Einfache Manipulation des Trees</font></li><font face="Wingdings" size="2" color="#006666"><li></font><font face="Verdana" size="4">Nachteile DOM</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Bedeutend langsamer als SAX</font></li><font face="Wingdings" size="1" color="#99cccc"><li></font><font face="Verdana" size="4">Es können nur kleine Datenmengen verarbeitet werden</font></li></ul>
+<p /><div align="right"><font face="Verdana" size="1">20</font></div>
+<p /><font face="Arial" size="5" color="#006666">Quellen</font>
+<p /><font face="Verdana" size="1">[1]	 W3C: “ Extensible Markup Language (<I><FONT COLOR=RED>XML</FONT></I>) 1.0 (Zweite Auflage)”, http://edition-w3c.de/TR/2000/REC-xml-20001006/#sec-physical-struct , 2006-02-26</font>
+<p />
+<p /><font face="Verdana" size="1">[2] Margarete und Alois Payer: “ Eine Einführung in <I><FONT COLOR=RED>XML</FONT></I>”, http://www.payer.de/xml/xml04.htm , 2006-02-26 </font>
+<p />
+<p /><font face="Verdana" size="1">[3]	 <I><FONT COLOR=RED>XML</FONT></I>: Grundbegriffe und Syntax:, http://www.stud.fernuni-hagen.de/q3329747/xmlkap2.html#2.2.2 , 2006-02-26</font>
+<p />
+<p /><font face="Verdana" size="1">[4] DOM, http://www.ssw.uni-linz.ac.at/Teaching/Lectures/Sem/2000/Jochinger/dom.html, 2006-03-06</font>
+<p />
+<p /><font face="Verdana" size="1">[5]	 Parser Grundlagen: http://www.fh-wedel.de/~si/seminare/ws00/Ausarbeitung/7.xmlparser/kap_2.html , 2006-03-06</font>
+<p />
+<p /><font face="Verdana" size="1">[6] <I><FONT COLOR=RED>XML</FONT></I> Parser Grundlegendes, http://www.uzi-web.de/parser/parser_grundlegendes.htm#sax , 2006-03-02</font>
+<p /><br/><br/><br/></body></html>

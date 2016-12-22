@@ -1,0 +1,52 @@
+
+SQL*Loader: Release 11.2.0.1.0 - Production on Di Jan 28 09:58:33 2014
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+Kontrolldatei:    f:\OracleText\02contextmarkup.ctl
+Datendatei:     F:\OracleText\02contextmarkup.dat
+  Fehlerdatei:     f:\OracleText\02contextmarkup.bad
+  Datei für zurückgewiesene Sätze:  nichts spezifiziert
+ 
+ (alle Discards zulassen)
+
+Zu ladende Anzahl:     ALL
+Zu überspringende Anzahl: 0
+Zulässige Fehler:          50
+Bind-Array:     64 Zeilen, maximal 256000 Bytes
+Fortsetzung:    nichts spezifiziert
+Benutzer Pfad:      Konventionell
+
+Tabelle DOCS, geladen von jedem logischen Satz.
+Insert-Option in Kraft für diese Tabelle: REPLACE
+
+   Spaltenname                  Position   Läng Term Eing Datentyp
+------------------------------ ---------- ----- ---- ---- ---------------------
+ID                                  FIRST     4           INTEGER              
+TITLE                                NEXT     *   ;       CHARACTER            
+TEXT_FILE                            NEXT     *   ;       CHARACTER            
+  (FILLER FIELD)
+TEXT                              DERIVED     *  EOF      CHARACTER            
+    Dynamisch LOBFILE.  Dateiname in Feld TEXT_FILE
+
+
+Tabelle DOCS:
+  7 Zeilen erfolgreich geladen.
+  0 Zeilen aufgrund von Datenfehlern nicht geladen.
+  0 Zeilen  nicht geladen, da alle WHEN-Klauseln fehlerhaft waren.
+  0 Zeilen nicht geladen, da alle Felder NULL waren.
+
+
+Zugewiesener Bereich für Bind-Array:             33280 Bytes (64 Zeilen)
+Byte in Lese-Puffer: 1048576
+
+Gesamtzahl der übersprungenen logischen Datensätze:        0
+Gesamtzahl der gelesenen logischen Datensätze:               7
+Gesamtzahl der abgelehnten logischen Datensätze:             0
+Gesamtzahl der zurückgewiesenen logischen Datensätze:        0
+
+Lauf begonnen am Di Jan 28 09:58:33 2014
+Lauf beendet am Di Jan 28 09:58:36 2014
+
+Abgelaufene Zeit:    00:00:02.96
+CPU-Zeit:             00:00:00.06

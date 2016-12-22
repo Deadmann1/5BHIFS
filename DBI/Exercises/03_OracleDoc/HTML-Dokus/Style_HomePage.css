@@ -1,0 +1,40 @@
+body {
+	background-image: url(Hintergrund/EDVO_BACK_UO.jpg);
+}
+.Stil6 {
+	font-family: "Courier New", Courier, mono;
+	font-size: 24px;
+}
+.Stil8 {
+	font-family: "Courier New", Courier, mono;
+	font-size: 24px;
+	font-weight: bold;
+	font-variant: small-caps;
+	text-transform: capitalize;
+	color: #000066;
+}
+
+.Stil11 {font-size: 24px;
+         font-weight: bold;
+		 color: #000000;}
+.Stil12 {
+	font-size: larger;
+	font-weight: bold;
+	color: #FF0000;
+}
+.Stil14 {color: #FF0000}
+.Stil19 {font-size: xx-large}
+.Stil23 {
+	font-size: larger;
+	color: #FF0000;
+}
+.Stil26 {
+	font-family: Arial;
+	color: #000000;
+}
+
+.Stil24 {
+	font-size: 16px;
+	color: #3399CC;
+}
+.Stil25 {font-size: 14px}

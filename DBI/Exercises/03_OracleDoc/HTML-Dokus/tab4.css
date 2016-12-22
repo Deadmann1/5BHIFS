@@ -1,0 +1,41 @@
+H1 {
+	color: red;
+	font-size: 20pt;
+	background-color: lightblue;
+	border-bottom:solid thin black;
+	letter-spacing:2mm;
+    word-spacing:5mm;
+}
+P {	padding: 20px;
+	font-size: 13pt;
+	line-height: 30pt;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+TABLE {
+	width:50%;
+	color: black;
+	border: 3px dashed black;
+	float:left;
+	margin-right: 30px;
+}
+TH {
+	color: red;
+	font-size: 20pt;
+	vertical-align: bottom;
+	letter-spacing:2mm;
+}
+TD.first {
+	border: 1px dotted red;
+	width: 200px;
+	background-color: lightblue;
+   	padding: 10px;
+	text-align: center;
+}
+TD.third {
+	border: 1px dotted red;
+	width: 200px;
+	background-color: lightgreen;
+   	padding: 20px;
+	text-align: right;
+}
