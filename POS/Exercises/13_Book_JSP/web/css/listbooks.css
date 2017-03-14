@@ -1,0 +1,25 @@
+H2 {
+	color: red;
+	font-size: 14pt;
+	background-color: lightblue;
+	border-bottom:solid thin black;
+	letter-spacing:2mm;
+    word-spacing:5mm;
+}
+DIV#main {
+	font-size: 13pt;
+	line-height: 30pt;
+	background-color: yellow;
+}
+input.classmessage {
+	font-size: 11pt;
+	background-color: gray;
+	color: darkred;
+}
+TABLE {
+	border: 3px dashed black;
+}
+td {
+	border: 1px dashed black;
+	background-color: lightgreen;
+}
