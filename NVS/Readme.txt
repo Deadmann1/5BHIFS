@@ -1,0 +1,1 @@
+Ausgabe nur in Console, wegen Thread Invoke bug !
