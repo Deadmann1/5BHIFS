@@ -1,0 +1,14 @@
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\LDAP_CSharp\LDAP_CSharp\bin\Debug\LDAP_CSharp.exe.config
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\LDAP_CSharp\LDAP_CSharp\obj\Debug\LDAP_CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\LDAP_CSharp\LDAP_CSharp\obj\Debug\MainWindow.g.cs
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\LDAP_CSharp\LDAP_CSharp\obj\Debug\App.g.cs
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\LDAP_CSharp\LDAP_CSharp\obj\Debug\LDAP_CSharp_MarkupCompile.cache
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\LDAP_CSharp\LDAP_CSharp\obj\Debug\LDAP_CSharp_MarkupCompile.lref
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\LDAP_CSharp\LDAP_CSharp\bin\Debug\LDAP_CSharp.exe
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\LDAP_CSharp\LDAP_CSharp\bin\Debug\LDAP_CSharp.pdb
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\LDAP_CSharp\LDAP_CSharp\obj\Debug\MainWindow.baml
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\LDAP_CSharp\LDAP_CSharp\obj\Debug\LDAP_CSharp.g.resources
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\LDAP_CSharp\LDAP_CSharp\obj\Debug\LDAP_CSharp.Properties.Resources.resources
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\LDAP_CSharp\LDAP_CSharp\obj\Debug\LDAP_CSharp.csproj.GenerateResource.Cache
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\LDAP_CSharp\LDAP_CSharp\obj\Debug\LDAP_CSharp.exe
+C:\Users\Manuel Sammer\Documents\GitHub\5BHIFS\NVS\LDAP_CSharp\LDAP_CSharp\obj\Debug\LDAP_CSharp.pdb
