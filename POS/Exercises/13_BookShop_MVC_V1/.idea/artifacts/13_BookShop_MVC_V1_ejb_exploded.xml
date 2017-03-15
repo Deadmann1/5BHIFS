@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-ejb" name="13_BookShop_MVC_V1:ejb exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/13_BookShop_MVC_V1_ejb_exploded</output-path>
-    <root id="root">
-      <element id="javaee-facet-resources" facet="13_BookShop_MVC_V1/ejb/EJB" />
-      <element id="module-output" name="13_BookShop_MVC_V1" />
-    </root>
-  </artifact>
-</component>
