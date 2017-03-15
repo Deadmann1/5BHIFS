@@ -12,27 +12,19 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Login</title>
-    <Link rel="stylesheet" type="text/css" href="css/login.css">
+    <title>List Books</title>
+    <Link rel="stylesheet" type="text/css" href="css/listbooks.css">
 </head>
 <body>
-<h2>Login</h2>
+<h2>Search for Book(s) for user '${user.name}'</h2>
 <form action="LoginServlet" method="get">
     <div id="main">
-        username:<input type="text" name="user" size="25"><br/>
-        password:<input type="password" name="password" size="25">
+        book-id:<input type="text" name="bookId" size="25"><br/>
+        author:<input type="text" name="author" size="25">
     </div>
     <p/>
-    <input type="submit" name="btnLogin" value="Login">
-    <c:if test="${isLoggedIn}">
-        <input type="submit" name="btnListBooks" value="ListBooks">
-    </c:if>
-    <c:if test="${isAdmin}">
-        <input type="submit" name="btnNewBook" value="NewBook">
-        <input type="submit" name="btnNewUser" value ="NewUser">
-        <input type="submit" name="btnNewDelivery" value="NewDelivery">
-        <input type="submit" name="btnAllDeliveries" value="All Deliveries">
-    </c:if>
+    <input type="submit" name="btnLogin" value="Search">
+    <input type="submit" name="btnLogin" value="Back">
 </form>
 <div id="message">
     <input type="text" class="classmessage" name="message" readonly size="70" value="${sessionMessage}">
