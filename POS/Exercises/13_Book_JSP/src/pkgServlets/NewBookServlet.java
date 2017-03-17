@@ -2,7 +2,6 @@ package pkgServlets;
 
 import pkgData.BookBean;
 import pkgData.Database;
-import pkgData.UserBean;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,8 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 /*
   Created by IntelliJ IDEA.
@@ -23,8 +24,8 @@ import java.io.PrintWriter;
   except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
   For permission requests, write to the publisher.
 */
-@WebServlet(name = "BookListServlet")
-public class BookListServlet extends HttpServlet {
+@WebServlet(name = "NewBookServlet")
+public class NewBookServlet extends HttpServlet {
     private HttpSession session = null;
     private PrintWriter writer = null;
     private String sessionMessage = "";
@@ -32,8 +33,8 @@ public class BookListServlet extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        verifySession(request,response);
-        initSession(request,response);
+        verifySession(request, response);
+        initSession(request, response);
         checkInput(request, response);
         callAppropriateJSP(request, response);
     }
@@ -62,35 +63,40 @@ public class BookListServlet extends HttpServlet {
     }
 
     private void callAppropriateJSP(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String url = (response.encodeRedirectURL(request.getContextPath()) + "/listBooks.jsp");
-        if (request.getParameter("btnSearch") != null) {
-            url = (response.encodeRedirectURL(request.getContextPath()) + "/bookDetail.jsp");
-        } else if (request.getParameter("btnBack") != null) {
-            url = response.encodeRedirectURL(request.getContextPath());
-            sessionMessage = "type in bookid a/o author";
-        }
+        String url = (response.encodeRedirectURL(request.getContextPath()));
         session.setAttribute("sessionMessage", sessionMessage + " (hits: " + hits + ")");
-        try {
-            response.sendRedirect(url);
-        } catch (IOException e) {
-            response.sendRedirect(response.encodeRedirectURL(request.getContextPath()) + "/error.jsp");
+        if (request.getParameter("btnInsert") != null) {
+            try {
+                response.sendRedirect(url + "/newBook.jsp");
+            } catch (IOException e) {
+                response.sendRedirect(response.encodeRedirectURL(request.getContextPath()) + "/error.jsp");
+            }
+        } else if (request.getParameter("btnBack") != null) {
+            try {
+                response.sendRedirect(url + "/login.jsp");
+            } catch (IOException e) {
+                response.sendRedirect(response.encodeRedirectURL(request.getContextPath()) + "/error.jsp");
+            }
         }
     }
 
     private void checkInput(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        if (request.getParameter("btnSearch") != null) {
-            int id = 0;
-            String str = request.getParameter("bookId");
-            if (str != null && !str.isEmpty()) {
-                id = Integer.parseInt(str);
-            }
+        if (request.getParameter("btnInsert") != null) {
+            int id = Integer.parseInt(request.getParameter("id"));
             String author = request.getParameter("author");
-            BookBean book = new BookBean(id, "", author, -1);
-            session.setAttribute("sessionBook", book);
-            try {
-                session.setAttribute("bookList", Database.getInstance().getBooksWithUser((UserBean)session.getAttribute("sessionUser"),book));
-            } catch (Exception e) {
-                sessionMessage = "SQL Exception : ( " + e.getMessage() + " )";
+            String title = request.getParameter("title");
+            int price = Integer.parseInt(request.getParameter("price"));
+            if (id < 1 || author == null || title == null || price < 1 || author.equals("") || title.equals("")) {
+                sessionMessage = "please fill in all fields";
+            }
+            else{
+                BookBean book = new BookBean(id,title,author,price);
+                try {
+                    Database.getInstance().addBook(book);
+                    sessionMessage = "book inserted";
+                } catch (Exception e) {
+                    sessionMessage = "SQL Exception : ( " + e.getMessage() + " )";
+                }
             }
         }
     }

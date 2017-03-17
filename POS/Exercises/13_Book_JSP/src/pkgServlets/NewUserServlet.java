@@ -23,8 +23,8 @@ import java.io.PrintWriter;
   except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
   For permission requests, write to the publisher.
 */
-@WebServlet(name = "BookListServlet")
-public class BookListServlet extends HttpServlet {
+@WebServlet(name = "NewUserServlet")
+public class NewUserServlet extends HttpServlet {
     private HttpSession session = null;
     private PrintWriter writer = null;
     private String sessionMessage = "";
@@ -32,8 +32,8 @@ public class BookListServlet extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        verifySession(request,response);
-        initSession(request,response);
+        verifySession(request, response);
+        initSession(request, response);
         checkInput(request, response);
         callAppropriateJSP(request, response);
     }
@@ -62,35 +62,38 @@ public class BookListServlet extends HttpServlet {
     }
 
     private void callAppropriateJSP(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String url = (response.encodeRedirectURL(request.getContextPath()) + "/listBooks.jsp");
-        if (request.getParameter("btnSearch") != null) {
-            url = (response.encodeRedirectURL(request.getContextPath()) + "/bookDetail.jsp");
-        } else if (request.getParameter("btnBack") != null) {
-            url = response.encodeRedirectURL(request.getContextPath());
-            sessionMessage = "type in bookid a/o author";
-        }
+        String url = (response.encodeRedirectURL(request.getContextPath()));
         session.setAttribute("sessionMessage", sessionMessage + " (hits: " + hits + ")");
-        try {
-            response.sendRedirect(url);
-        } catch (IOException e) {
-            response.sendRedirect(response.encodeRedirectURL(request.getContextPath()) + "/error.jsp");
+        if (request.getParameter("btnInsert") != null) {
+            try {
+                response.sendRedirect(url + "/newUser.jsp");
+            } catch (IOException e) {
+                response.sendRedirect(response.encodeRedirectURL(request.getContextPath()) + "/error.jsp");
+            }
+        } else if (request.getParameter("btnBack") != null) {
+            try {
+                response.sendRedirect(url + "/login.jsp");
+            } catch (IOException e) {
+                response.sendRedirect(response.encodeRedirectURL(request.getContextPath()) + "/error.jsp");
+            }
         }
     }
 
     private void checkInput(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        if (request.getParameter("btnSearch") != null) {
-            int id = 0;
-            String str = request.getParameter("bookId");
-            if (str != null && !str.isEmpty()) {
-                id = Integer.parseInt(str);
+        if (request.getParameter("btnInsert") != null) {
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
+            if ( username == null || password == null || username.equals("") || password.equals("")) {
+                sessionMessage = "please fill in all fields";
             }
-            String author = request.getParameter("author");
-            BookBean book = new BookBean(id, "", author, -1);
-            session.setAttribute("sessionBook", book);
-            try {
-                session.setAttribute("bookList", Database.getInstance().getBooksWithUser((UserBean)session.getAttribute("sessionUser"),book));
-            } catch (Exception e) {
-                sessionMessage = "SQL Exception : ( " + e.getMessage() + " )";
+            else{
+                UserBean user = new UserBean(username,password);
+                try {
+                    Database.getInstance().addUser(user);
+                    sessionMessage = "user inserted";
+                } catch (Exception e) {
+                    sessionMessage = "SQL Exception : ( " + e.getMessage() + " )";
+                }
             }
         }
     }

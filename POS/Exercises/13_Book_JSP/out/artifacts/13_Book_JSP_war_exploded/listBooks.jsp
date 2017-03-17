@@ -16,15 +16,18 @@
     <Link rel="stylesheet" type="text/css" href="css/listbooks.css">
 </head>
 <body>
-<h2>Search for Book(s) for user '${user.name}'</h2>
-<form action="LoginServlet" method="get">
+<c:if test="${empty sessionID}">
+    <c:redirect url="login.jsp"></c:redirect>
+</c:if>
+<h2>Search for Book(s) for user '${sessionUser.username}'</h2>
+<form action="BookListServlet" method="get">
     <div id="main">
-        book-id:<input type="text" name="bookId" size="25"><br/>
-        author:<input type="text" name="author" size="25">
+        book-id:<input type="number" name="bookId" size="25"><br/>
+        author:<input type="text" name="author" size="25" value="%">
     </div>
     <p/>
-    <input type="submit" name="btnLogin" value="Search">
-    <input type="submit" name="btnLogin" value="Back">
+    <input type="submit" name="btnSearch" value="Search">
+    <input type="submit" name="btnBack" value="Back">
 </form>
 <div id="message">
     <input type="text" class="classmessage" name="message" readonly size="70" value="${sessionMessage}">

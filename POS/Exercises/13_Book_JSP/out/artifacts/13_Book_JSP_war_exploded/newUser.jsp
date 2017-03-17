@@ -9,24 +9,20 @@
   For permission requests, write to the publisher.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>List Books</title>
-    <Link rel="stylesheet" type="text/css" href="css/listbooks.css">
+    <title>New User</title>
+    <Link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-<c:if test="${empty sessionID}">
-    <c:redirect url="login.jsp"></c:redirect>
-</c:if>
-<h2>Search for Book(s) for user '${sessionUser.username}'</h2>
-<form action="BookListServlet" method="get">
+<h2>New  User</h2>
+<form action="NewUserServlet" method="get">
     <div id="main">
-        book-id:<input type="number" name="bookId" size="25"><br/>
-        author:<input type="text" name="author" size="25" value="%">
+        name:<input type="text" name="username" size="25"><br/>
+        password:<input type="password" name="password" size="25">
     </div>
     <p/>
-    <input type="submit" name="btnSearch" value="Search">
+    <input type="submit" name="btnInsert" value="Insert">
     <input type="submit" name="btnBack" value="Back">
 </form>
 <div id="message">

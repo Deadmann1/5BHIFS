@@ -11,19 +11,21 @@
 package pkgData;
 
 import java.io.Serializable;
+import java.sql.Date;
 
-public class UserBean implements Serializable {
-
-    public UserBean() {
+public class DeliveryBean implements Serializable {
+    public DeliveryBean() {
     }
 
-    public UserBean(String username, String password) {
+    public DeliveryBean(String username, Date detdate, int deltotalprice) {
         this.username = username;
-        this.password = password;
+        this.detdate = detdate;
+        this.deltotalprice = deltotalprice;
     }
 
     private String username;
-    private String password;
+    private Date detdate;
+    private int deltotalprice;
 
     public String getUsername() {
         return username;
@@ -33,11 +35,19 @@ public class UserBean implements Serializable {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public Date getDetdate() {
+        return detdate;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setDetdate(Date detdate) {
+        this.detdate = detdate;
+    }
+
+    public int getDeltotalprice() {
+        return deltotalprice;
+    }
+
+    public void setDeltotalprice(int deltotalprice) {
+        this.deltotalprice = deltotalprice;
     }
 }

@@ -11,6 +11,46 @@
         <servlet-name>BookListServlet</servlet-name>
         <servlet-class>pkgServlets.BookListServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BookDetailServlet</servlet-name>
+        <servlet-class>pkgServlets.BookDetailServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewBookServlet</servlet-name>
+        <servlet-class>pkgServlets.NewBookServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewUserServlet</servlet-name>
+        <servlet-class>pkgServlets.NewUserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeliveryListServlet</servlet-name>
+        <servlet-class>pkgServlets.DeliveryListServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderListServlet</servlet-name>
+        <servlet-class>pkgServlets.OrderListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderListServlet</servlet-name>
+        <url-pattern>/OrderListServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeliveryListServlet</servlet-name>
+        <url-pattern>/DeliveryListServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewUserServlet</servlet-name>
+        <url-pattern>/NewUserServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewBookServlet</servlet-name>
+        <url-pattern>/NewBookServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BookDetailServlet</servlet-name>
+        <url-pattern>/BookDetailServlet</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>BookListServlet</servlet-name>
         <url-pattern>/BookListServlet</url-pattern>

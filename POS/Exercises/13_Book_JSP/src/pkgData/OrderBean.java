@@ -12,18 +12,28 @@ package pkgData;
 
 import java.io.Serializable;
 
-public class UserBean implements Serializable {
-
-    public UserBean() {
+public class OrderBean implements Serializable {
+    public OrderBean() {
     }
 
-    public UserBean(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
+    private int bookid;
     private String username;
-    private String password;
+    private String title;
+    private boolean delivered;
+
+    public OrderBean(int bookid, String username, String title) {
+        this.bookid = bookid;
+        this.username = username;
+        this.title = title;
+    }
+
+    public int getBookid() {
+        return bookid;
+    }
+
+    public void setBookid(int bookid) {
+        this.bookid = bookid;
+    }
 
     public String getUsername() {
         return username;
@@ -33,11 +43,19 @@ public class UserBean implements Serializable {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getTitle() {
+        return title;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public boolean isDelivered() {
+        return delivered;
+    }
+
+    public void setDelivered(boolean delivered) {
+        this.delivered = delivered;
     }
 }

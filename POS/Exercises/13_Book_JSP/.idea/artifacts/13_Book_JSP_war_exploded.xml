@@ -7,6 +7,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="13_Book_JSP" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="org.glassfish:javax.servlet.jsp.jstl:3.0.1" />
+          <element id="library" level="application" name="ojdbc6" />
+        </element>
       </element>
     </root>
   </artifact>

@@ -1,6 +1,5 @@
 package pkgServlets;
 
-import pkgData.BookBean;
 import pkgData.Database;
 import pkgData.UserBean;
 
@@ -12,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 
 /*
   Created by IntelliJ IDEA.
@@ -23,8 +23,8 @@ import java.io.PrintWriter;
   except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
   For permission requests, write to the publisher.
 */
-@WebServlet(name = "BookListServlet")
-public class BookListServlet extends HttpServlet {
+@WebServlet(name = "OrderListServlet")
+public class OrderListServlet extends HttpServlet {
     private HttpSession session = null;
     private PrintWriter writer = null;
     private String sessionMessage = "";
@@ -32,8 +32,8 @@ public class BookListServlet extends HttpServlet {
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        verifySession(request,response);
-        initSession(request,response);
+        verifySession(request, response);
+        initSession(request, response);
         checkInput(request, response);
         callAppropriateJSP(request, response);
     }
@@ -62,33 +62,56 @@ public class BookListServlet extends HttpServlet {
     }
 
     private void callAppropriateJSP(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String url = (response.encodeRedirectURL(request.getContextPath()) + "/listBooks.jsp");
-        if (request.getParameter("btnSearch") != null) {
-            url = (response.encodeRedirectURL(request.getContextPath()) + "/bookDetail.jsp");
-        } else if (request.getParameter("btnBack") != null) {
-            url = response.encodeRedirectURL(request.getContextPath());
-            sessionMessage = "type in bookid a/o author";
-        }
+        String url = (response.encodeRedirectURL(request.getContextPath()) + "/listOrders.jsp");
         session.setAttribute("sessionMessage", sessionMessage + " (hits: " + hits + ")");
-        try {
-            response.sendRedirect(url);
-        } catch (IOException e) {
-            response.sendRedirect(response.encodeRedirectURL(request.getContextPath()) + "/error.jsp");
+        if (request.getParameter("btnList") != null) {
+            try {
+                response.sendRedirect(url);
+            } catch (IOException e) {
+                response.sendRedirect(response.encodeRedirectURL(request.getContextPath()) + "/error.jsp");
+            }
+        } else if (request.getParameter("btnNewDelivery") != null) {
+            try {
+                response.sendRedirect(response.encodeRedirectURL(request.getContextPath()) + "/listOrders.jsp");
+            } catch (IOException e) {
+                response.sendRedirect(response.encodeRedirectURL(request.getContextPath()) + "/error.jsp");
+            }
+        } else if (request.getParameter("btnBack") != null) {
+            try {
+                response.sendRedirect(response.encodeRedirectURL(request.getContextPath()) + "/login.jsp");
+            } catch (IOException e) {
+                response.sendRedirect(response.encodeRedirectURL(request.getContextPath()) + "/error.jsp");
+            }
         }
     }
 
     private void checkInput(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        if (request.getParameter("btnSearch") != null) {
-            int id = 0;
-            String str = request.getParameter("bookId");
-            if (str != null && !str.isEmpty()) {
-                id = Integer.parseInt(str);
-            }
-            String author = request.getParameter("author");
-            BookBean book = new BookBean(id, "", author, -1);
-            session.setAttribute("sessionBook", book);
+        if (request.getParameter("btnList") != null) {
             try {
-                session.setAttribute("bookList", Database.getInstance().getBooksWithUser((UserBean)session.getAttribute("sessionUser"),book));
+                String username = request.getParameter("username");
+
+                if (username == null || username.equals("")) {
+                    sessionMessage = "please insert a username";
+                } else {
+
+                    session.setAttribute("listOrders", Database.getInstance().getOrderFromUser(username));
+                    sessionMessage = "list of orders of " + username + "...";
+                }
+            } catch (Exception e) {
+                sessionMessage = "SQL Exception : ( " + e.getMessage() + " )";
+            }
+        } else if (request.getParameter("btnNewDelivery") != null) {
+            try {
+                String[] bookIds = request.getParameterValues("ckorder");
+                String dateString = request.getParameter("deldate");
+                String username = request.getParameter("username");
+                if (username == null || username.equals("") || dateString == null || dateString.equals("")|| bookIds == null || bookIds.length < 1) {
+                    sessionMessage = "please enter a username, a valid date and select a least 1 order for delivery!";
+                } else {
+                    Date deldate = Date.valueOf(dateString);
+                    Database.getInstance().addDelivery(bookIds, username, deldate);
+                    sessionMessage = bookIds.length + " books successfully delivered";
+                }
             } catch (Exception e) {
                 sessionMessage = "SQL Exception : ( " + e.getMessage() + " )";
             }
