@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/out/test/14_PLF"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="GlassFish 4.1.1" scope="PROVIDED"/>
+	<lib name="javax.servlet:jstl:1.1.2" scope="PROVIDED"/>
+	<levels>
+		<level name="GlassFish 4.1.1" value="application_server_libraries"/>
+		<level name="javax.servlet:jstl:1.1.2" value="project"/>
+	</levels>
+</component>

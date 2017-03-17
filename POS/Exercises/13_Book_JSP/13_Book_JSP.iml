@@ -20,9 +20,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="GlassFish 4.1.1" level="application_server_libraries" />
-    <orderEntry type="library" name="org.glassfish:javax.servlet.jsp.jstl:3.0.1" level="project" />
-    <orderEntry type="library" name="javax.servlet:jstl:1.2" level="application" />
-    <orderEntry type="library" name="ojdbc6" level="application" />
-    <orderEntry type="library" name="ojdbc61" level="project" />
+    <orderEntry type="library" exported="" name="ojdbc61" level="application" />
+    <orderEntry type="library" name="javax.servlet:jstl:1.2" level="project" />
   </component>
 </module>

@@ -12,30 +12,25 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>List deliveries</title>
-    <Link rel="stylesheet" type="text/css" href="css/listbooks.css">
+    <title>Login</title>
+    <Link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-<c:if test="${empty sessionID && isAdmin = true}">
-    <c:redirect url="login.jsp"></c:redirect>
-</c:if>
-<h2>List of all deliveries</h2>
-<form action="BookDetailServlet" method="get">
+<h2>Login</h2>
+<img src="./images/logo.png" alt="LOGO">
+<form action="LoginServlet" method="get">
     <div id="main">
-        <table>
-            <c:forEach var="delivery" items="${deliveryList}">
-                <tr><td><c:out value ="${delivery.username}"/></td>
-                    <td><c:out value ="${delivery.deltotalprice}"/></td>
-                    <td><c:out value ="${delivery.deldate}"/></td></tr>
-            </c:forEach>
-        </table>
-        <p/>
+        username:<input type="text" name="customername" size="25" value="Klammer"><br/>
+        password:<input type="password" name="password" size="25" value="Klammer">
     </div>
     <p/>
-    <input type="submit" name="btnOK" value="OK">
+    <input type="submit" name="btnLogin" value="Login">
+    <c:if test="${isLoggedIn}">
+        <input type="submit" name="btnMenu" value="Menu">
+    </c:if>
 </form>
 <div id="message">
-    <input type="text" class="classmessage" name="message" readonly size="70" value="${sessionMessage}">
+    <input type="text" class="classmessage" name="message" readonly size="70" placeholder="type in your username and password" value="${sessionMessage}">
 </div>
 </body>
 </html>

@@ -1,37 +1,39 @@
 <%--
   Created by IntelliJ IDEA.
-  Author: Manuel Sammer
-  Copyright © 2017 by Manuel Sammer
+  Author: sammerm
+  Copyright © 2017 by sammerm
   All rights reserved. 
   No part of this publication may be reproduced, distributed, or transmitted in any form or by any means, 
   including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the publisher, 
   except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law.
   For permission requests, write to the publisher.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>List deliveries</title>
+    <title>Buy Form for Car Booking</title>
     <Link rel="stylesheet" type="text/css" href="css/listbooks.css">
 </head>
 <body>
-<c:if test="${empty sessionID && isAdmin = true}">
+<c:if test="${empty sessionID || empty sessionCustomer}">
     <c:redirect url="login.jsp"></c:redirect>
 </c:if>
-<h2>List of all deliveries</h2>
-<form action="BookDetailServlet" method="get">
+<h2>Form for selecting cars</h2>
+<form action="BuyServlet" method="get">
     <div id="main">
+        customer:<input readonly type="text" name="username" value="${sessionCustomer.username}" size="25">
+        <p/>
         <table>
-            <c:forEach var="delivery" items="${deliveryList}">
-                <tr><td><c:out value ="${delivery.username}"/></td>
-                    <td><c:out value ="${delivery.deltotalprice}"/></td>
-                    <td><c:out value ="${delivery.deldate}"/></td></tr>
+            <c:forEach var="car" items="${carList}">
+                <tr><td><input type="checkbox" name="ckorder" value="${car.id}"></td>
+                    <td><c:out value ="${car.name}"/></td>
+                    <td><c:out value ="${car.price}"/></td></tr>
             </c:forEach>
         </table>
         <p/>
     </div>
     <p/>
+    <input type="submit" name="btnBuy" value="Buy">
     <input type="submit" name="btnOK" value="OK">
 </form>
 <div id="message">

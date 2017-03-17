@@ -16,7 +16,7 @@
     <Link rel="stylesheet" type="text/css" href="css/listbooks.css">
 </head>
 <body>
-<c:if test="${empty sessionID}">
+<c:if test="${empty sessionID && isAdmin = true}">
     <c:redirect url="login.jsp"></c:redirect>
 </c:if>
 <h2>List of all deliveries</h2>
