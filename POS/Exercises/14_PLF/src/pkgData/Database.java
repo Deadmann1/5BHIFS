@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Vector;
 
 public class Database {
-    private static String connStr="jdbc:oracle:thin:@192.168.128.152:1521:ora11g";//Externe ip jdbc:oracle:thin:@212.152.179.117:1521:ora11g192.168.128.152
+    private static String connStr="jdbc:oracle:thin:@212.152.179.117:1521:ora11g";//Externe ip jdbc:oracle:thin:@212.152.179.117:1521:ora11g192.168.128.152
     private static String user = "d5b12";
     private static String passwd = "d5b";
 
