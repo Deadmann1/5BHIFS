@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_overview"
+            android:title="Overview" />
+        <item
+            android:id="@+id/nav_addons"
+            android:title="Addons" />
+        <item
+            android:id="@+id/nav_room_service"
+            android:title="Room Service" />
+        <item
+            android:id="@+id/nav_restaurant_order"
+            android:title="Restaurant Order" />
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Logout" />
+    </group>
+
+</menu>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">HolidayOut</string>
+    <string name="title_activity_overview">Overview</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_addons">Addons</string>
+    <string name="title_activity_room_service">Room Service</string>
+    <string name="title_activity_restaurant_order">Restaurant Order</string>
+    <string name="title_activity_checkout">CheckoutActivity</string>
+</resources>

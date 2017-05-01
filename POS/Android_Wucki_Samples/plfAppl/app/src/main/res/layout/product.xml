@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+android:id="@+id/widget28"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:orientation="vertical"
+xmlns:android="http://schemas.android.com/apk/res/android"
+>
+<TextView
+android:id="@+id/txtProduct"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="TextView"
+>
+</TextView>
+<EditText
+android:id="@+id/txtName"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="EditText"
+android:textSize="18sp"
+>
+</EditText>
+<EditText
+android:id="@+id/txtOnStock"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="EditText"
+android:textSize="18sp"
+>
+</EditText>
+<EditText
+android:id="@+id/txtOnMarket"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="EditText"
+android:textSize="18sp"
+>
+</EditText>
+<Spinner
+android:id="@+id/spProducer"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+>
+</Spinner>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtmsg" />
+</LinearLayout>
