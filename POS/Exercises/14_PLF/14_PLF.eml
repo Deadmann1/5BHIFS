@@ -8,6 +8,5 @@
 	<levels>
 		<level name="GlassFish 4.1.1" value="application_server_libraries"/>
 		<level name="javax.servlet:jstl:1.1.2" value="project"/>
-		<level name="ojdbc61" value="project"/>
 	</levels>
 </component>
